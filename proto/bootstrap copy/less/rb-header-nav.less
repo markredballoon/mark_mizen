@@ -1,0 +1,549 @@
+//Variables
+
+// Size of the header
+@header-height-base: 						91px;
+@header-height-responsive: 					55px;
+
+// Logo dimentions
+
+@logo-image: 								url(../../../images/logo.svg);
+@logo-image-responsive: 					@logo-image;
+
+@logo-width-default: 						232px;
+@logo-height-default:						34px;
+
+@logo-width-header: 						@logo-width-default;
+@logo-height-header: 						@logo-height-default;
+
+@logo-width-footer:							@logo-width-default;
+@logo-height-footer: 						@logo-height-default;
+
+// Crest dimentions
+
+@crest-image: 								url(../../../images/crest.png);
+@crest-image-responsive: 					@crest-image;
+
+@crest-width-default: 						723px;
+@crest-height-default:						649px;
+
+@crest-width-header: 						37px;
+@crest-height-header: 						33px;
+
+@crest-width-footer:						71px;
+@crest-height-footer: 						64px;
+
+
+// Hamburger menu icon
+@menu-icon-colour: 							@green;
+@menu-icon-width: 							29px;
+@menu-icon-height: 							2px;
+@menu-icon-border-radius: 					0;
+@menu-icon-inside-margin: 					5px;
+
+// Main navigation sizes
+@nav-main-item-width: 						auto;
+@nav-main-item-height: 						auto;
+
+// Header links styles
+
+
+header{
+	min-height: @header-height-base;
+	/* added */
+	border-bottom: 3px solid rgba(255,255,255,0.72);
+	-webkit-background-clip: padding;
+	background-clip: padding-box;
+}
+
+// Hamburger
+.nav-toggle{
+	display: block;
+	position: relative;
+	border: none; 
+	padding: 0;
+	border-radius: 0;
+	background: none;
+	.icon-bar{
+		display: block;
+	    width: @menu-icon-width;
+	    height: @menu-icon-height;
+		background: @menu-icon-colour;
+		border-radius: @menu-icon-border-radius;
+		//margin-bottom: 3px;
+		& + .icon-bar{
+			margin-top: @menu-icon-inside-margin;
+		}
+	}
+	&:hover{
+		// Hover state
+	}
+	&.open{
+		//Styles when open
+	}
+}
+
+// Default nav styles
+nav{
+	ul{
+		/* added */
+		margin: 0; text-align: center;
+		li{
+			//Stuctural, try to avoid adding many styles to this element
+			font-size: 0;
+			float: left;
+			a{
+				// Add margins and paddings to this element
+				display: block;
+				span{
+				/* added */
+				.letterspacing();
+				font-size: @font-size-base;
+				line-height: 21px;
+				color: @gray-dark;
+				}
+				&:hover{
+					//Hover state
+				}
+				&:hover, &:focus{
+					text-decoration: none;
+				}
+			}
+		}
+		&.v-list>li{
+			// List where each item fills the whole width.
+			display: block;
+		}
+	}
+}
+
+// Hidden sub-menus
+.sub-menu{
+	position: absolute;
+	display: none;
+	&.show{
+		display: block;
+	}
+}
+
+//Megamenu styles
+.mega-menu .sub-menu{
+	left: 0;
+	width: 100%;
+}
+
+//Dropdown styles
+.dropdown .sub-menu{
+
+}
+
+
+// Cloned responsive menu
+.mobile-nav{
+	display: none;
+	&.show{
+		display: block;
+	}
+}
+
+
+/* Position navs either side of the crest */
+
+header nav {
+	.container-fluid {
+		position: relative;
+	}
+	ul {
+		position: absolute;
+		right: 50%; margin-right: 80px; 
+		li {
+			padding-left: 26px;
+			&:first-child {
+				padding-left: 0;
+			}
+		}
+	}
+	ul.secondary {
+		left: 50%; 
+		margin-left: 80px;
+		margin-right: 0;
+		right: auto;
+		li {
+			padding-right: 26px;
+			padding-left: 0;
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+		
+	}
+}
+
+
+
+// Logo
+
+.logo{
+	&.logo-image>a{
+		// If the logo is brought in by an image and you want to get the aspect ratio from height:auto
+		height:auto; 
+	}
+	&.logo-ar>a{
+		// If the logo is a background image and you want to have a constant aspect ratio
+		// Width then Height value
+		.aspect-ratio(16, 9);
+		.cover-bg();
+	}
+
+	&>a{
+		.cover-bg();
+		display: block;
+		background: @logo-image;
+		background-size: @logo-width-default @logo-height-default;
+		width: @logo-width-default;
+		height: @logo-height-default;
+	}
+	
+	/* added */
+	text-indent: -9999px;
+}
+
+/* added */
+@logo-width-margin: (@logo-width-header / 2);
+
+/* added */
+// Crest
+
+.crest{
+	&.crest-image>a{
+		// If the logo is brought in by an image and you want to get the aspect ratio from height:auto
+		height:auto; 
+	}
+	&.crest-ar>a{
+		// If the logo is a background image and you want to have a constant aspect ratio
+		// Width then Height value
+		.aspect-ratio(1, 1);
+		.cover-bg();
+	}
+
+	&>a{
+		.cover-bg();
+		display: block;
+		background: @crest-image;
+		background-size: @crest-width-default @crest-height-default;
+		width: @crest-width-default;
+		height: @crest-height-default;
+	}
+	
+	/* added */
+	text-indent: -9999px;
+}
+
+/* added */
+@crest-width-margin: (@crest-width-header / 2);
+
+
+header{
+	.logo {
+		/* added */
+		position: absolute;
+		left: 50%;
+		margin-left: -@logo-width-margin;
+		padding-top: 10px;
+		>a{
+			width: @logo-width-header;
+			height: @logo-height-header;
+		}
+	}
+	.crest {
+		position: absolute;
+		left: 50%;
+		top: -7px;
+		margin-left: -@crest-width-margin;
+		>a{
+			width: @crest-width-header;
+			height: @crest-height-header;
+			background-size: @crest-width-header @crest-height-header;
+		}
+	}
+}
+
+footer{
+	.logo>a{
+		width: @logo-width-footer;
+		height: @logo-height-footer;
+		
+	}
+	.crest>a{
+		width: @crest-width-footer;
+		height: @crest-height-footer;
+		background-size: @crest-width-footer @crest-height-footer;
+		
+	}
+}
+/*
+@media screen and (max-width: [breakpoint] ;){
+
+}
+*/
+
+/* Core header styles */
+.header-top {
+    min-height: 52px; 
+	background: #fff;
+}
+.main-nav {
+	min-height: 36px; 
+	padding-top: 9px; 
+	position: relative;
+	ul li a{
+		opacity: 0.5;
+		&:hover{
+			opacity: 1;
+		}
+	}
+}
+.total-raised {
+	text-align: center;
+    width: auto;
+    float: right;
+    padding-top: 9px;
+    padding-right: 20px;
+    color: @green;
+	span {
+		font-size: @font-size-small;
+		line-height: 14px;
+		display: block;
+	}
+	span.total {
+		font-size: @font-size-base;	
+		line-height: 21px;
+	}
+}
+
+.header-links {
+	float: left;
+	padding-top: 8px;
+	padding-left: 20px;
+	a {
+		.letterspacing();
+		border: 1px solid @green;
+		border-radius: @border-radius-base;
+		padding: 3px 11px;
+		color: @green;
+		background: #fff;
+		display: block;
+		span {
+			font-size: @font-size-base;	
+			line-height: 21px;
+		}
+		&:hover {
+			background: @green;
+			color: #fff;
+		}
+	}
+}
+
+// Static header
+
+@header-top-height : 52px;
+
+
+header{
+	padding-top: @header-top-height;
+}
+.header-top {
+	min-height: @header-top-height; 
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 2;
+	transform: translateY(0) translateZ(0);
+	.nav-toggle{
+		display: none;
+		opacity: 0;
+		pointer-events: none;
+	}
+	&.fixed-header{
+		position: fixed;
+		background-color:#fff; 
+		-webkit-background-clip: padding;
+		background-clip: padding-box;
+		border-bottom: 3px solid rgba(255,255,255,0.72);
+		.nav-toggle{
+			float: right;
+			display: block;
+			opacity: 1;
+			pointer-events: auto;
+			margin: 17px 17px 0 17px;
+			.icon-bar{
+				background: #acacac;
+			}
+		}
+		.logo {
+			margin-left:-116px; 
+			a {
+					width: 232px;
+			}
+		}
+		.header-links {
+			padding-top: 10px;
+			a {
+			    font-size: 14px;
+			    line-height: 17px;
+			    padding: 4px 11px;	
+			    border-radius: 3px;	
+			    background: @green;
+			    color: #fff;		
+				&:hover {
+					background: #fff;
+					color: @green;
+				}
+			}
+		}
+	
+	}
+
+		/*&:after{
+			content: " ";
+			position: absolute;
+			top: 100%;
+			left: 0;
+			width: 100%;
+			height: 3px;
+			background-color: rgba(255,255,255,0.72);
+		}*/
+}
+
+
+@keyframes headerScrollIn{
+	0% {transform: translateY(-100%);}
+	100% {transform: translateY(0%);}
+}
+.fixed-header{
+	animation-name: headerScrollIn;
+	animation-duration: 0.3s;
+	animation-iteration-count: 1;
+	animation-timing-function:ease-in;
+}
+
+header{
+	.logo{
+		z-index: 1;
+		a{
+			height: 34px;
+			background: none;
+			position: relative;
+			svg{
+				max-height: 100%;
+				display: block;
+				width: 100%;
+				height: auto;
+				position: relative;
+			}
+		}
+	}
+}
+.fixed-header svg{
+	g#Layer_1{
+		fill:#ACACAC;
+	}
+}
+
+// Mobile navigation
+// on larger screens the mobile nav is used as the drop down for the main nav
+.mobile-nav{
+    position: fixed;
+    top: (@header-top-height - 3px);
+    right: 0;
+    width: 200px;
+    visibility: hidden;
+    ul{
+    	-webkit-font-smoothing: antialiased;
+    	position: relative;
+    	right:auto;
+    	margin-right: 0;
+    	text-align: left;
+    	background-color: #fff;
+    	li{
+    		display: block;
+    		padding: 0;
+    		float:none;
+    		a{
+    			padding: 0 0 0 10px;
+    			background-color: #fff;
+    			color: rgba(0,0,0,0.70);
+    			span{
+					font-size: 24px;
+					color: inherit;
+					line-height: 41px;
+    			}
+    			&:hover, &:focus{
+					background: @gray-rb;
+					color:#fff;
+				}
+    		}
+    	}
+    }
+    .crest{
+    	top: 7px;
+    	display: none;
+    }
+}
+.fixed-header ~ .mobile-nav{
+	visibility: visible;
+}
+@media screen and (min-width: 1440px){
+	.mobile-nav{
+		right: calc((100% - 1440px )/ 2 + 17px);
+	}
+}
+@media screen and (max-width: 910px){
+	.mobile-nav{
+		position: absolute;
+		width: 100%;
+		right: auto;
+		left: 0;
+		top:(@header-top-height - 3px);
+		visibility: visible;
+		ul{
+			padding-top: 40px;
+		}
+		.crest{
+			display: block;
+		}
+	}
+	.fixed-header ~ .mobile-nav{
+		position: fixed;
+	}
+
+	.header-top, .header-top.fixed-header {
+		.nav-toggle{
+			display: block;
+			pointer-events: auto;
+			opacity: 1;
+			float: right;
+			margin: 17px 0 0 10px;
+			.icon-bar{
+				background-color:#ACACAC;
+			}
+		}
+	}
+	.header-links{
+		padding-right: 0;
+		a{
+			font-size: @font-size-base-rb;
+			padding: 5px 11px;
+			line-height: 21px;
+		}
+	}
+	header{
+		min-height: 0;
+		.main-nav{
+			display: none;
+		}
+	}
+	.total-raised{
+		display: none;
+	}
+}

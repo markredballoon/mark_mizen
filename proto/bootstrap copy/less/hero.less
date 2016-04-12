@@ -1,0 +1,107 @@
+// Hero sizes
+
+
+//Placholder sizes
+@hero-height-small: 157px;
+@hero-height-medium: 354px;
+@hero-height-large: 560px;
+
+// Default hero styles
+@hero-height-default: @hero-height-large; 
+/*
+If the hero height changes at different screen sizes:
+@media screen and (max-width: @screen-md-max){
+	.hero{
+		height:@hero-height-default;
+	}
+}
+@media screen and (max-width: @screen-sm-max){
+	.hero{
+		height:@hero-height-default;
+	}
+}
+@media screen and (max-width: @screen-xs-max){
+	.hero{
+		height:@hero-height-default;
+	}
+}
+*/
+.hero{
+	background: @purple;
+	min-height: @hero-height-default;
+	&.hero-large{
+		min-height: @hero-height-large;
+	}
+	&.hero-medium{
+		min-height: @hero-height-medium;
+	}
+	&.hero-small{
+		min-height: @hero-height-small;
+		margin-bottom: @plv;
+		color: @gray-lighter;
+	}
+}
+
+
+// Other generic hero styles
+.hero{
+	position: relative;
+	.clearfix();
+	.bg{
+		z-index: 1;
+	}
+	.title{
+		position: relative;
+		z-index: 2;
+	}
+}
+
+.hero.hero-small .title{
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+@media screen and (max-width: @screen-md-max){
+	.hero{
+		&.hero-medium{
+			min-height: 304px;
+		}
+	}
+}
+
+/* Added by bill - responsive hero styles */
+
+@media screen and (max-width: @screen-sm-max){
+
+	.hero{
+		&.hero-large{
+			min-height: 0;
+		}
+		&.hero-medium{
+			min-height: 0;
+			background: none;			
+		}
+		&.hero-small{
+			min-height: 0;
+		}
+		.bg {
+			    padding-top: 27%;
+			    position: relative;
+				margin-left: -10px;
+				margin-right: -10px;
+				width: calc(100% + 20px);		    
+		}
+		&.hero-small{
+			.bg {
+					margin-left: -10px;
+					margin-right: -10px;
+					width: calc(100%);		    
+			}
+		}
+		
+	}	
+
+}

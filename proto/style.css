@@ -1,0 +1,21 @@
+/*
+Theme Name: [name]
+Theme URI: [url]
+Author: Red Balloon Design Ltd
+Author URI: http://redballoon.io
+Description: Bespoke blog theme created for [website]
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags:
+Text Domain: redballooncms
+*/
+
+/* Import Font Face */
+@import url("css/fonts.css");
+
+/* CSS Reset */
+@import url("css/reset.css");
+
+/* Import Bootstrap dist */
+@import url("bootstrap/dist/css/bootstrap.min.css");

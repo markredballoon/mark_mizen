@@ -1,0 +1,55 @@
+// Hero sizes
+
+
+//Placholder sizes
+@hero-height-small: 200px;
+@hero-height-medium: 430px;
+@hero-height-large: 560px;
+
+// Default hero styles
+@hero-height-default: @hero-height-large; 
+/*
+If the hero height changes at different screen sizes:
+@media screen and (max-width: @screen-md-max){
+	.hero{
+		height:@hero-height-default;
+	}
+}
+@media screen and (max-width: @screen-sm-max){
+	.hero{
+		height:@hero-height-default;
+	}
+}
+@media screen and (max-width: @screen-xs-max){
+	.hero{
+		height:@hero-height-default;
+	}
+}
+*/
+.hero{
+	min-height: @hero-height-default;
+	&.hero-large{
+		min-height: @hero-height-large;
+	}
+	&.hero-medium{
+		min-height: @hero-height-medium;
+	}
+	&.hero-small{
+		min-height: @hero-height-small;
+	}
+}
+
+
+// Other generic hero styles
+.hero{
+	position: relative;
+	.clearfix();
+	.bg{
+		z-index: 1;
+	}
+	.title{
+		position: relative;
+		z-index: 2;
+	}
+}
+

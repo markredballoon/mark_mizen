@@ -1,0 +1,70 @@
+.swatchinput {
+  display:inline-block;
+  padding-right:7px;
+  padding-bottom:3px;
+}
+.belowtext {
+   display: table-cell;
+   vertical-align: bottom;
+   padding-bottom: 16px;
+   font-family: sans-serif;
+   font-weight: bold;
+}
+
+
+
+.selectedswatch {opacity: .9;}
+.selectedswatch {
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+	
+    display:inline-block;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+
+	border: solid 2px black;
+    outline: solid 1px #9C9999;
+    outline-style:dotted;
+    line-height: 1.0000;
+	
+}
+.wcvaswatchlabel{
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+	
+    display:inline-block;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+
+	border: solid 2px white;
+    outline: solid 1px #9C9999;
+    outline-style:dotted;
+    line-height: 1.0000;
+}
+
+
+
+
+
+
+.wcvaround {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+	outline: solid 0 #9C9999;
+}
+.swatchtitlelabel {
+	font-weight: 700;
+}
+
+
+
+
+
+
+
+	

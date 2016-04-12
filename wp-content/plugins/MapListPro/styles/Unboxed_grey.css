@@ -1,0 +1,54 @@
+/***************************/
+/* Colours                 */
+/***************************/
+.prettyMapList .btn{border:solid 1px #000 !important;}
+
+.infoWindowContainer .infoWindow h3{
+    background-color:#fff;
+    font-size: 14px; font-weight: normal; color: #303538; text-shadow: 0 0 0 #fff;
+}
+
+.infoWindowContainer .infoWindow h3,
+.prettyMapList .corePrettyStyle{    
+}
+
+.prettyMapList .corePrettyStyle:hover{
+}
+
+
+/*Remove shadow*/
+.prettyMapList .prettyListItems .prettylink {
+    -webkit-box-shadow:none;
+    -moz-box-shadow:none;
+    box-shadow:none;     
+}
+
+/*Link colours*/
+.prettyMapList .prettylink a:hover, .prettyMapList .prettylink p:hover { text-decoration: none; }
+
+.prettyMapList .prettylink .mapcategories{color:#ccc;}
+.prettyMapList .prettylink .mapcategories span{color:#bbb;}
+
+/*Close bar*/
+.prettyMapList .prettyFileBar .bar{
+	background-color:#fbfbfb;
+	border-top:solid 1px #ccc;
+}
+.prettyMapList .prettyFileBar .bar .cross{opacity:0;}
+.prettyMapList .prettyFileBar .bar .cross:hover{background-color:#efefef;}
+
+#home-hero .infoWindowContainer { border: 0px solid #fff; width: 408px; position: relative; background: none; }
+
+.infoWindowContainer .infoWindow {
+	background: #fff; border: 2px solid #004290; border-radius: 7px; width: auto; padding: 21px; max-width: 408px; display: block; margin: 0 auto;  position: relative;
+}
+
+.infoWindowContainer .infoWindow img {
+	margin-bottom: 12px;
+}
+
+.infoWindowContainer .infoWindow h3 {
+	text-align: center; font-size: 16px;
+}
+
+.infoWindowContainer .infoWindow p, .infoWindowContainer .infoWindow h3  {font-family: "scalasans", sans-serif;}

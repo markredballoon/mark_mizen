@@ -1,0 +1,149 @@
+/* Utility Classes developed by red balloon */
+
+// Create full height containers and rows that start at the bottom of the page
+.container{
+	&.window-height{
+		position: relative;
+		height: 100vh;
+		.row{
+			height: 100%;
+			&.bottom{
+				height: auto;
+			}
+		}
+	}
+	.row.bottom{
+		// Positions row at bottom of a container. only use when container has set height
+		position: absolute;
+		bottom: 0;
+		left: (@grid-gutter-width / 2); // Taken from grid.less . gives row correct position within the padding of the parent element.
+		width: 100%;
+	}
+}
+
+//Add an element for use as a background
+.bg{
+	// Requires position relative on parent element
+	.abs-cover(0);
+	.cover-bg();
+	pointer-events: none;
+	z-index: -1;
+}
+
+// Add an overlay to an element. Add hover class to add hover state
+.overlay{
+	.abs-cover(0);
+	pointer-events: none;
+	background-color: #000;
+	opacity: 0.6; 
+	&.hover{
+		opacity: 0;
+	}
+}
+:hover > .overlay.hover{
+	opacity: 0.6;
+}
+
+
+// Add text that appers in the center of a parent element on hover
+.hover-text{
+	.abs-cover(0);
+	position: absolute;
+	display: none;
+	span{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+	}
+}
+:hover > .hover-text{
+	opacity: 1;
+	display: block;
+}
+
+// Media wraps
+.image-wrap{
+	width: 100%;
+	position: relative;
+	img{
+		width: 100%;
+	}
+}
+.video-wrap{
+	position: relative;
+	iframe{
+		width: 100%;
+	}
+	&.video-wide{
+		.aspect-ratio(16, 9);
+	}
+	&.video-standard{
+		.aspect-ratio(4,3);
+	}
+	&.aspect-cust-1{
+		.aspect-ratio(854,414);
+	}
+}
+
+//captioned wraps
+.captioned{
+	.title{
+	}
+	.caption{
+	}
+}
+
+
+
+//Aspect ratio classes:
+.aspect-16-9{
+	.aspect-ratio(16, 9);
+}
+.aspect-4-3{
+	.aspect-ratio(4, 3);
+}
+.aspect-golden{
+	.aspect-ratio(1.618, 1);
+}
+
+
+
+// Makes element full width of parent. Used to add full-width panels.
+.full-width{
+	width: 100%;
+	position: relative;
+}
+.half-width{
+	width: 50%;
+}
+
+
+
+// Calls to action
+
+.cta{
+	position: relative;
+	&.cta-lg{
+		min-height: 200px;
+		position: relative;
+	}
+	&.cta-md{
+		position: relative;
+		min-height: 120px;
+	}
+	&.cta-sm{
+		position: relative;
+		min-height: 80px;
+	}
+	&.cta-fluid{
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.cta-content{
+		.abs-cover(0);
+	}
+	.above-overlay{
+		z-index: 5;
+	}
+}

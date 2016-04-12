@@ -1,0 +1,439 @@
+msgid ""
+msgstr "MIME-Version: 1.0\n"
+
+#. Short description.
+msgid "PopupAlly allows you to create advanced popup signup forms in under 5 minutes without the need to deal with messy code."
+msgstr ""
+
+#. Screenshot description.
+msgid "PopupAlly Default popup preview"
+msgstr ""
+
+#. Screenshot description.
+msgid "Customize the popup through the visual editor and know exact what it will look like instantly"
+msgstr ""
+
+#. Screenshot description.
+msgid "Don't know code? Don't worry! Just paste in the copy and we will take care of the rest!"
+msgstr ""
+
+#. Screenshot description.
+msgid "Control exactly when and where the popup will appear!"
+msgstr ""
+
+#. Found in description header.
+msgid "Why You Should Consider Upgrading to PopupAlly Pro"
+msgstr ""
+
+#. Found in description header.
+msgid "PopupAlly Free WordPess Popup Plugin Is Compatible With"
+msgstr ""
+
+#. Found in description header.
+msgid "Get PopupAlly Step by Step Tutorials"
+msgstr ""
+
+#. Found in description header.
+msgid "Increase Your List More in 30 Days Or Less"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "If you're looking to grow your list, then PopupAlly is the no-fluff free WordPress popup plugin for you. With built-in advanced features this lightbox popup plugin allows you to build your list as people are about to exit your website. Exit-intent popups allow you to capture lost visitors and have been shown to increase conversion by over 300%. PopupAlly allows you to create advanced popup signup forms in under 5 minutes, even if you don't know code. PopupAlly's visual editor allows you to customize the look-and-feel of your popups with an instant preview, saving you lots of time."
+msgstr ""
+
+#. Found in description paragraph.
+msgid ""
+"= Premium Support =\n"
+"  The PopupAlly team does not provide support for the PopupAlly plugin on the WordPress.org forums. One-on-one email support is available to people who bought the <a href=\"http://ambitionally.com/popupally-pro?utm_source=wordpressdirectory&amp;utm_medium=banner&amp;utm_content=main&amp;utm_campaign=popupallypro\">PopupAlly Pro plugin</a> only."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "We created the <a href=\"http://ambitionally.com/upgrading-to-popupally-pro/?utm_source=wordpressdirectory&amp;utm_medium=banner&amp;utm_content=main&amp;utm_campaign=popupallypro\">premium version</a> with many extra features and an optimized interface, so it's even more intuitive and quick to design beautifully customized popups and multiple types of embedded opt-ins, too. It will be well worth of your investment!"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "You should also check out our <a href=\"http://30daylistbuildingchallenge.com\">free 30 Day List Building Challenge</a> for tricks and tips to help you grow your list in addition to having great popups!"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "If you've been using our free PopupAlly plugin, then you already love the awesome exit intent functionality and the ability to create popups as well as embedded opt-ins... and you might be wondering what’s included in our premium version to justify the upgrade?"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "We have a full side by side comparison of the two versions <a href=\"http://ambitionally.com/upgrading-to-popupally-pro/?utm_source=wordpressdirectory&amp;utm_medium=banner&amp;utm_content=main&amp;utm_campaign=popupallypro\">here</a>."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "On top of the incredibly flexible new design templates that allow you to customize your opt-ins to your heart's content... we've also included new ways to customize the user experience."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Now, you can include mini-surveys and also have unlimited opt-ins, more polite popups, and much more. <a href=\"http://ambitionally.com/upgrading-to-popupally-pro/?utm_source=wordpressdirectory&amp;utm_medium=banner&amp;utm_content=main&amp;utm_campaign=popupallypro\">Click here to find out why you should consider the upgrade</a>."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Aweber, MailChimp, MadMimi, iContact, GetResponse, Infusionsoft, Ontraport, and any other email marketing systems that provides HTML opt-in code!"
+msgstr ""
+
+#. Found in description paragraph.
+msgid ""
+"Check out the video tutorial on how to integrate MailChimp and AWeber with PopupAlly:\n"
+"[youtube http://www.youtube.com/watch?v=q7xiX_BWTbU]"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "This simple popup plugin is pretty intuitive, but we've also written <a href=\"http://ambitionally.com/popupally/tutorials/\">extensive step-by-step tutorials</a> to help you get up and running faster so you can get back to business."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "With PopupAlly you can easily customize the look and feel of your lightbox popup, starting with the headline text, adding an image, and changing the colors to match your website's design. Then you decide if you want the popups to appear after a timed delay, or right before someone is about to leave your site. You also decide how often your popup should re-appear if someone closes it, so it doesn't annoy your visitors!"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "With the help of this free WordPress popup plugin you'll be well on your way to growing your list faster than ever before. But don't stop there, go ahead and join the <a href=\"http://30daylistbuildingchallenge.com\">free 30 Day List Building Challenge</a> and see what's possible when you start to apply these additional list building strategies."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Download AmbitionAlly's free WordPress popup plugin and increase your optin subscriber rate today!"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Activate the PopupAlly plugin"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Customize the plugin settings through the PopupAlly menu group"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Follow the rest of the <a href=\"http://ambitionally.com/popupally/tutorials/\">step-by-step tutorials here</a>"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Make sure to integrate PopupAlly with an email marketing system so you do not lose any subscriber information! <a href=\"http://nathalielussier.com/mailchimp\">MailChimp</a> and <a href=\"http://nathalielussier.com/aweber\">AWeber</a> are two great options. Need more choices? You can find our recommended list of systems <a href=\"http://nathalielussier.com/online-business-resources\">here</a>."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Cosmetic update to interface."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update tested version to 4.3.1."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add Text Domain to header."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update tested version to 4.2.3."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add setting check to prevent manual database value change."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update tested version to 4.2.2."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add jQuery to script dependency."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improve style setting customization interface."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update tested version to 4.1.2."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix bug in the Tried-and-true template that causes incorrect height when embedded in post content."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update tested version."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update \"Express Yourself\" popup CSS so that the layout is not affected by parent container's text-align settings."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update documentation to include tutorial video."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update embedded popup CSS so that the layout is not affected by \"float\" elements."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tested with WordPress 4.1."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Change cookie value to \"disable\" avoid being mistaken for malicious value."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update PopupAlly description."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Test and verify that PopupAlly is compatible with WordPress 4.0."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix bug where popup does not close on iPhone when clicking on background"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update popup script so it is compatible with more sites."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix issue for preview display error when the opt-in form has an input field with no name."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update FAQ section"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update \"Tested-up-to\" version to 3.9.2"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Remove unused class to avoid conflict"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add id selector to CSS template to prevent being overwritten by theme styling"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Change close (x) button image path to be relative to the WP install path. This fixes the button not showing up issue for site installed in a subfolder"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Change close button from <a> to </a>"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add advanced setting that controls how many pages/posts to load in Display settings. This fixes the issue where Display Settings fails to load due to time out for sites with a lot of (10k+) pages/posts"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix issue where location for subscribe button cannot be saved for 'Express yourself' template"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add more specific selector to input css to avoid conflicts"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Replace close button with image for better display on Mac"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix mismatch between preview and embedded view for \"express-yourself\" template"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Remove the word 'color' from the color input control to avoid conflict with other scripts on the backend"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix default template introduction text row height issue for mobile display."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix thank you page setup link"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix responsive style for non-square logo image"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix responsive style for embedded sign-up forms"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix readme version number"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add special pages to the popup display settings."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add embedded display option"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add template selection to popup style settings."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add \"Express yourself\" style template."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix issue where only 5 posts are shown in Display Setting selections"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update readme file"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Specifically define background img for submit button to be none."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Remove second parameter from json_encode so the function works with PHP pre-5.3"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Use 'bind' instead of 'on' for event handling if the site is using an earlier version of jQuery."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Remove all 'fancybox' string to avoid conflict."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Change deprecated jQuery handler live() to on()"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Define submit button height to be auto."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Upgrade interface for better page/post selection."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix input field display error in Firefox when input[type=\"text\"] has height defined."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix input field stretches outside border when class 'content' has width defined."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add non-inline mode for themes that do not implement the wp_head function."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add PHP version check and provide warning if PHP version is less than 5.3"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Do not generate hidden fields if none exists. This could be causing errors for more strict php implementations."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Change field name storage structure to allow for '[' and ']' in field names."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update version number in the main plugin file."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix sign-up form field selection issue."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Initial release."
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "&lt;"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "div&gt; to prevent it being made ineffective by (poorly written) theme Javascripts"
+msgstr ""
+
+#. Found in faq header.
+msgid "How many popups can I have?"
+msgstr ""
+
+#. Found in faq header.
+msgid "Where do the subscriber information go after they click the submit button?"
+msgstr ""
+
+#. Found in faq header.
+msgid "Can I setup the popup for every post and page on my site?"
+msgstr ""
+
+#. Found in faq header.
+msgid "Do I need to know how to modify HTML/CSS code?"
+msgstr ""
+
+#. Found in faq header.
+msgid "How do I put in my own sign up form?"
+msgstr ""
+
+#. Found in faq header.
+msgid "The popup was working, but it is not longer showing up even though I did not change anything!"
+msgstr ""
+
+#. Found in faq header.
+msgid "I have done everything according to the tutorial, but the popup is not showing up!"
+msgstr ""
+
+#. Found in faq header.
+msgid "Where do the sign-ups go?"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "You can configure 2 popups without upgrading to the Pro version"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "You need an email marketing system before you can use PopupAlly. PopupAlly helps you create sign up forms that collects names and emails, which you can then send newsletter to on a regular basis. PopupAlly does not send email directly to the subscribers."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid ""
+"<a href=\"http://nathalielussier.com/mailchimp\">MailChimp</a> and <a href=\"http://nathalielussier.com/aweber\">AWeber</a> are two great options. Here is a tutorial video to help you integrate <a href=\"http://nathalielussier.com/mailchimp\">MailChimp</a> / <a href=\"http://nathalielussier.com/aweber\">AWeber</a> with PopupAlly.\n"
+"[youtube http://www.youtube.com/watch?v=q7xiX_BWTbU]"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Absolutely! You can enable the popup for every post and page with 1 click on the display settings!"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "No programming experience required! You can see all the customizations instantly in the Visual Editor."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "You just need to copy-and-paste in the HTML code from your CRM/list platform, and we will do the rest! No need to get your hands dirty with code."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "This is most likely due to the \"Show popup every [x] days\" option in Display Settings. Normally, you do not want to popup to show up every time a visitor comes to your website, so this option will stop the popup from showing up for [x] number of days. However, this makes testing difficult. The good news is that there are many ways to get around it. Please see the <a href=\"http://ambitionally.com/popupally/tutorials/#testing-private\">tutorial</a> for more details!"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid ""
+"There are 3 main causes for this:\n"
+"* With \"Show for all pages?\" checked in Display Settings, please make sure you do NOT check \"All Pages\" and \"All Posts\" under \"Except for these posts/pages\"\n"
+"* Javascript errors will prevent popups from showing. With the page loaded, you can open the Developer View in Chrome and look for the red error sign. The error is usually caused by another plugin, so you can disable the active plugins one-by-one to see if that helps.\n"
+"* It could be a theme issue. The <a href=\"http://ambitionally.com/popupally/tutorials/#testing-theme\">Advanced Settings</a> might help. If not, please contact your developer and make sure your theme implements the standard WordPress hooks (wp_head and wp_footer)"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid ""
+"You need an email marketing system before you can use PopupAlly. PopupAlly helps you create sign up forms that collects names and emails, which you can then send newsletter to on a regular basis. PopupAlly does not send email directly to the subscribers.\n"
+"You can check out the systems we recommend in the Email Marketing section on our <a href=\"http://nathalielussier.com/online-business-resources\">Resource Page</a>\n"
+"Once you have picked an email marketing system, you can integrate it with PopupAlly in the Style Settings. Please take a look at the <a href=\"http://ambitionally.com/popupally/tutorials/#configure-style-integration\">tutorial</a> for more in-depth explanations"
+msgstr ""

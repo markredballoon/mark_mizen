@@ -1,0 +1,53 @@
+/*
+=== === === === === === ===
+_bg_carousel
+=== === === === === === ===
+*/
+//CSS for new carousel
+
+.bg-carousel-wrap{
+	.abs-cover(0);
+	pointer-events: none;
+
+	.bg-carousel-static{
+		.abs-cover(0);
+		.cover-bg();
+	}
+	.bg-carousel-animate{
+		.cover-bg();
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top:0;
+		left: 0;
+	}
+}
+// 1D carousel
+.bg-carousel-animate{
+	&.from-left{
+		left:-100%;
+		display: block;
+	}
+	&.from-right{
+		left: 100%;
+		display: block;
+	}
+	&.animate{
+		display: block;
+		transition: left 0.8s;
+		left: 0;
+	}
+}
+//controls
+.bg-carousel-control{
+	ul{
+		li{
+			a{
+				cursor: pointer;
+				span{
+
+				}
+			}
+		}
+	}
+}

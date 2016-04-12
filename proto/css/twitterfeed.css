@@ -1,0 +1,67 @@
+.tweets-container {
+	background: #FDF8F4;
+	padding: 20px;
+}
+
+.tweets-container ul{
+	list-style-type: none;
+	width: 350px;
+
+}
+li.tweet-single{
+	display: block;
+	width: 100%;
+	background-color: #FFF;
+	padding: 19px;
+	border-radius: 5px;
+	margin: 12px;
+	min-height: 80px;
+	border: 1px solid #E8E4E1;
+	border-bottom: 3px solid #E8E4E1;
+}
+
+.tweet-single .profile_pic{
+	display: block;
+	float: left;
+	width: 80px;
+	height: 80px;
+	margin-right: 12px;
+	margin-bottom: 9px;
+}
+
+.tweet-single .profile_pic img{
+	width: 100%;
+	height: 100%;
+}
+
+.is-retweeted{
+	font-style: italic;
+	font-size: 0.7em;
+}
+
+.post-info{
+	font-size: 0.9em;
+	color: #8A7A77;
+}
+
+.tweet-contents{
+	color: #303740;
+	font-size: 1.1em;
+	margin-left: 92px;
+}
+
+.linked_img{
+	width: 100%;
+}
+.linked_img{
+	width: 100%;
+	height: auto;
+}
+
+
+li.tweet-single.hide-tweet{
+	display: none;
+}
+.hide-tweet{
+	display: none;
+}

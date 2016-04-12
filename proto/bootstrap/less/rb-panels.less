@@ -1,0 +1,50 @@
+// Variables
+@panel-sm-height:				300px;
+@panel-md-height:				400px;
+@panel-lg-height:				640px;
+
+@panel-default-height: 			@panel-md-height;
+
+@pannel-margin-top: 			0;
+@pannel-margin-bottom:			0;
+
+@pannel-padding-top: 			0;
+@pannel-padding-bottom:			0;
+
+
+
+.panel{
+	position: relative;
+	width: 100%;
+	min-height: @panel-default-height;
+	margin-top: @pannel-margin-top;
+	margin-bottom: @pannel-margin-bottom;
+	padding-top: @pannel-padding-top;
+	padding-bottom:@pannel-padding-bottom;
+	&.panel-sm{
+		min-height: @panel-sm-height;
+	}
+	&.panel-md{
+		min-height: @panel-md-height;
+	}
+	&.panel-lg{
+		min-height: @panel-lg-height;
+	}
+	& > .container{
+		&.full-height{
+			height: 100%;
+			position: relative;
+		}
+		&:not(.full-height){
+			position: static;
+		}
+	}
+}
+
+// Media queries
+@media screen and (max-width:@screen-md){
+}
+@media screen and (max-width:@screen-sm){
+}
+@media screen and (max-width:@screen-xs){
+}

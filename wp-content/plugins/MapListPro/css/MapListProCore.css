@@ -1,0 +1,1371 @@
+/*REUSABLE STUFF*/
+.cf:before,
+.cf:after {content: " ";display: table;}
+.cf:after {clear: both;}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {*zoom: 1;}
+
+/*Hide*/
+.prettyMapList .prettyFileBar .prettyMapListSearch .hidden{display:none;}
+/*floats*/
+.prettyMapList .float_right{float:right;}
+.prettyMapList .float_left{float:left;}
+/*Buttons*/
+#MaplistBack,
+.prettyMapList .btn{
+    display:inline-block;
+    *display:inline;
+    font-size: 12px;
+    padding: 5px 10px;
+    text-decoration: none;
+    zoom:1;
+}
+
+.prettyMapList .btn:hover{}
+.prettyMapList .btn:active{}
+
+.prettyMapList ul.unstyled,
+.prettyMapList ul.unstyled{list-style-type:none;margin:0 !important;padding:0 !important;}
+
+/* For IE 6/7 (trigger hasLayout) */
+.prettyMapList .clearfix {
+    *zoom:1;
+}
+
+/*MAIN*/
+/*The map itself*/
+.prettyMapList .mapHolder{
+    height: 800px;
+    width: 100%;
+}
+
+/*Pop up windows*/
+.prettyMapList .mapHolder .infoWindow
+{
+    font-size:14px;
+}
+
+/*CUSTOM columns*/
+
+.prettyMapList .additionalDetail{margin-bottom:10px;}
+
+.prettyMapList .additionalDetail .colLeft,
+.prettyMapList .additionalDetail .colRight{
+    float:left;
+    width:49%;
+}
+
+.infoWindowContainer{
+    border-radius:5px;
+    border:none;
+    position:relative;
+}
+
+.infoWindowContainer.infobox{border:solid 1px #999;}
+
+.infoWindowContainer.infobox:after,
+.infoWindowContainer.infobox:before {
+    top: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.infoWindowContainer.infobox:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-top-color: #fff;
+    border-width: 15px;
+    left: 50%;
+    margin-left: -15px;
+}
+
+.infoWindowContainer.infobox:before {
+    border-color: rgba(51, 51, 51, 0);
+    border-top-color: #999;
+    border-width: 16px;
+    left: 50%;
+    margin-left: -16px;
+}
+
+.infoWindowContainer .infoWindow{
+    background-color:#fff;
+    border-radius:0 0 5px 5px;
+
+}
+
+.infoWindowContainer.infobox .infoWindow .infowindowContent{overflow: auto;}
+
+.infoWindowContainer .infoWindow .infowindowContent{
+    padding:10px;
+}
+
+.infoWindowContainer img{
+    position:absolute !important;
+    right:3px;
+    top:3px;
+}
+
+.infoWindowContainer img .infoWindow{
+    position:static;
+}
+
+body .infoWindowContainer .infoWindow h3{
+    border:none;
+    border-radius:0;
+    color:#1e91d7;
+    margin:0 !important;
+}
+
+.infoWindowContainer .locationImage{
+    float: none;
+    padding: 0;
+    width: 100%; height: auto;
+}
+
+body .infoWindowContainer .infoWindow h3 span{font-size:13px;}
+
+.infoWindowContainer .infoWindow img{position:static !important;}
+
+.prettyMapList .mapHolder .infoWindow .cats{
+    clear:both;
+    color:#888;
+    font-size:11px;
+    padding-top:5px;
+}
+
+
+/*Fixes street view button, and box shadows from themes*/
+.prettyMapList .mapHolder img,
+#SingleMapLocation img{
+    box-shadow: none;
+    max-width:none !important;
+}
+
+.prettyMapList .mapLocationDetail{
+    padding:0px 0;  margin-bottom: 24px;
+}
+
+.prettyMapList .address{position:relative;}
+
+.prettyMapList .address span{font-weight: bold;left:0;position:absolute;}
+
+.prettyMapList .mapcategories{
+    color:#aaa;
+    float:right;
+    font-size:11px;
+}
+
+.prettyMapList .mapcategories span{color:#888}
+
+/*Custom category lists*/
+.prettyMapList .prettyFileBar .multiCategoryFilter .btn{
+    margin:0 5px 0 0;
+}
+
+.prettyMapList .customCategoryList {
+}
+.prettyMapList .customCategoryList a {
+  width: 100%;
+  height: 43px;
+  color: #fff;
+  font-size: 16px;
+}
+
+
+
+.prettyMapList .customCategoryList ul{right: 0;top:42px;}
+
+.prettyMapList .multiCategoryFilter{margin-top:10px;}
+
+.prettyMapList .multiCategoryFilter .categoryFilterContainer,
+.prettyMapList .multiCategoryFilter .customCategoryList{float:left;}
+
+.prettyMapList .customCategoryList{
+    position: relative;
+
+}
+
+.prettyMapList .customCategoryList>ul{
+    -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+
+    background-color:#fff;
+    border:solid 1px #ccc;
+    border-radius:0 0 5px 5px;
+    display:none;
+    position:absolute;
+    font-size: 11px;
+    line-height: 1.2em;
+    width:120px;
+    z-index:9999;
+  padding: 12px;
+  font-size: 16px;
+  line-height: 1.618;   
+    width: 100%; 
+    
+}
+.prettyMapList .customCategoryList ul li{
+  padding: 11px 22px;
+  list-style-type:none;
+
+}
+
+.prettyMapList .multiCategoryFilter .customCategoryList>ul{
+    left:0px;
+    max-height:200px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    right:auto;
+    top:28px;
+
+}
+
+
+/*Sort and Filter Buttons*/
+.prettyMapList .customCategoryList .btn{
+    margin-top:10px;
+    padding-left:28px;
+    _padding-left:10px;
+    position:relative;
+    z-index: 200;
+}
+
+.prettyMapList .customCategoryList ul a
+{
+    border-bottom:solid 1px #f4f4f4;
+    color:#21759B;
+    display:block;
+    font-size:12px;
+    margin:0;
+    padding:5px;
+    text-decoration:none;
+
+    /*Animation*/
+    -webkit-transition: all 0.2s ;
+    -moz-transition: all 0.2s ;
+    -o-transition: all 0.2s ;
+    transition: all 0.2s ;
+}
+
+.prettyMapList .customCategoryList .btn.showSortingBtn:before{
+    background-image:url(../images/icons/silk_icons/arrow_down_red.png);
+}
+
+/*Sort and Filter Buttons*/
+.prettyMapList .showSortingBtn,
+.prettyMapList .showFilterBtn,
+.prettyMapList .sortList ul a.selected,
+.prettyMapList .sortList ul a.showing{
+    padding-left:28px;
+    _padding-left:10px;
+    position:relative;
+}
+
+
+.prettyMapList .prettyFileBar .categoryList .btn.showing{
+    padding-left:18px;
+    position:relative;
+}
+
+.prettyMapList .prettyFileBar .categoryList .btn.showing:after{
+    content:  "\2713 ";
+    height:10px;
+    left:5px;
+    position: absolute;
+    top:5px;
+    width:10px;
+}
+
+.prettyMapList .sortList ul a:before{background-image:none;}
+
+.prettyMapList .showSortingBtn:before,
+.prettyMapList .sortList ul a.selected:before{background-image:url(../images/icons/silk_icons/arrow_down_red.png);}
+.prettyMapList .sortAsc:before,
+.prettyMapList .sortList ul a.sortAsc:before{background-image:url(../images/icons/silk_icons/arrow_up_red.png);}
+
+/*List styles*/
+.prettyMapList .prettylink
+{
+    cursor:pointer;
+    display:inline-block;
+    float: left;
+    text-decoration:none;
+    zoom:1;
+}
+
+.prettyMapList .prettylink:after
+{
+    content:"";
+    display:block;
+    height:20px;
+    left:10px;
+    margin-right:2px;
+    position:absolute;
+    top:11px;
+    width:20px;
+}
+
+.prettyMapList .prettylink:hover{}
+
+.prettyMapList .prettylink:active{
+    /*Inset drop-shadow*/
+    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+.prettyMapList .prettylink a,
+.prettyMapList .prettylink a:visited{text-decoration:none;}
+
+/*Distance text for geo maps*/
+.prettyMapList .prettylink .distance{font-size:11px;}
+
+/*Make sure categories clear in ie11*/
+.prettyMapList .corePrettyStyle .viewLocationDetail{display:block}
+
+.prettyMapList .map {position:relative;}
+a.viewLocationDetail {
+  display: block;
+  width: auto;
+}
+/*Address in list item*/
+.prettyMapList .prettylink .address{ margin-bottom: 10px;}
+
+/*Added to stop themes overriding*/
+.prettyMapList .map{
+    float:none;
+    display:block;
+}
+
+/*Added to stop themes overriding*/
+.prettyMapList .map{
+    float:none;
+    display:block;
+}
+
+/*Set icons*/
+
+/*Use featured image*/
+.prettyMapList .featuredImage{
+}
+
+
+/*Small thumbnail*/
+.prettyMapList .prettylink .smallImage{left:5px;position:absolute;top:5px;z-index:3;}
+
+.prettyMapList .getDirections input{margin:0 3px;width: 200px;}
+.prettyMapList .mapLocationDirectionsHolder,
+.prettyMapList .mapLocationDirectionsHolder:hover{
+    background-color: #FFF;
+    color: red;
+    margin-left: 0px; margin-top: 55px;
+}
+
+.prettyMapList .mapLocationDirectionsHolder .adp-directions{
+    border: solid 1px #ccc;
+    margin-bottom: 0 !important;
+}
+
+/*Stop long directions breaking the layout*/
+.prettyMapList .mapLocationDirectionsHolder .adp-directions .adp-substep div{word-break: break-all;}
+
+/*distance and time*/
+.prettyMapList .mapLocationDirectionsHolder .adp-summary{
+    background-color:#fcfcfc;
+    border: solid 1px #ccc;
+    border-width: 0 1px;
+    color:#666;
+    font-size:13px;
+    text-align:right;
+    padding:5px;
+}
+.prettyMapList .mapLocationDirectionsHolder .adp-legal{font-size:11px;text-align: right;}/*map data google*/
+
+.prettyMapList .mapLocationDirectionsHolder table.adp-placemark{border:solid 1px #ccc;margin-bottom:0 !important;}
+
+.prettyMapList .mapLocationDirectionsHolder > div{
+    border:solid 1px #ccc;
+    margin-top:15px;
+    padding:10px;
+}
+
+.prettyMapList .mapLocationDirectionsHolder table{margin:0 0 5px 0 !important;width:100%;}
+
+.prettyMapList .mapLocationDirectionsHolder .adp-text{padding-left:35px;vertical-align:middle;}
+
+.prettyMapList .printDirections{float:right;margin-top:5px;padding:5px;}
+
+
+/*Pagination*/
+.prettyPagination
+{
+display:none;
+}
+.prettyPagination .pagingInfo{display:inline-block;*display:inline;margin-top:10px;zoom:1;}
+
+.prettyPagination a{
+    display:inline-block;
+    padding:5px;
+    *display:inline;
+    zoom:1;
+}
+
+.prettyPagination a.pfl_next{float:right;}
+.prettyPagination a.pfl_prev{float:left;}
+.prettyPagination a.disabled{opacity:0.4;}
+
+/*SEARCH AND FILTERS*/
+/*Filters*/
+.prettyMapList .prettyFileBar{
+    padding-bottom: 5px;
+    position:relative;
+}
+
+.prettyMapList .prettyFileBar .btn{margin:0;}
+
+
+.prettyMapList .prettyFileBar .prettyFileFilters,
+.prettyMapList .prettyFileBar .prettyFileSorting{
+    /*Drop shadow*/
+    -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+
+    background-color:#fff;
+    border:solid 1px #ccc;
+    border-radius:0 0 5px 5px;
+    display:none;
+    position:absolute;
+    font-size: 11px;
+    line-height: 1.2em;
+    right:0;
+    top:38px;
+    width:120px;
+    z-index:100;
+}
+
+.prettyMapList .prettyFileBar .prettyFileSorting{right:105px;}
+
+.prettyMapList .prettyFileBar .prettyFileFilters p,
+.prettyMapList .prettyFileBar .prettyFileSorting p{
+    margin-bottom:0 !important;
+        padding-bottom:0 !important;
+}
+
+.prettyMapList .prettyFileBar .prettyFileFilters li a,
+.prettyMapList .prettyFileBar .prettyFileSorting li a{
+    border-bottom:solid 1px #f4f4f4;
+    color:#21759B;
+    display:block;
+    font-size:12px;
+    margin:0;
+    padding:5px;
+    text-decoration:none;
+
+    /*Animation*/
+    -webkit-transition: all 0.2s ;
+    -moz-transition: all 0.2s ;
+    -o-transition: all 0.2s ;
+    transition: all 0.2s ;
+}
+
+
+
+.prettyMapList .prettyFileBar .prettyFileFilters li a{
+    background:rgb(247,255,224) none no-repeat 91px 10px;
+}
+
+.prettyMapList .prettyFileBar .prettyFileFilters li a:hover,
+.prettyMapList .prettyFileBar .prettyFileSorting li a:hover{
+    background-color:rgb(247,255,224);
+    color:#D54E21;
+}
+
+
+/*Direction icons*/
+.prettyMapList .prettyFileBar .prettyFileSorting li a{background:transparent url(../images/icons/silk_icons/arrow_down_red.png) no-repeat 100px 4px;}
+.prettyMapList .prettyFileBar .prettyFileSorting li a.sortAsc{background:transparent url(../images/icons/silk_icons/arrow_up_red.png) no-repeat 100px 4px;}
+
+/*Close bar*/
+.prettyMapList .prettyFileBar .bar{
+    background-color:#fbfbfb;
+    border-radius:0 0 5px 5px;
+    border-top:solid 1px #ccc;
+    text-align:right;
+}
+
+.prettyMapList .prettyFileBar .bar .cross{
+    background:transparent url(../images/icons1/cross.png) no-repeat 99% 50%;
+    display:block;
+    height:16px;
+    padding:5px;
+    text-align:left;
+    text-indent:-9000px;
+    opacity:0.4;
+}
+
+.prettyMapList .prettyFileBar .bar .cross:hover{
+    background-color:#efefef;
+}
+
+/*Selected filter*/
+.prettyMapList .prettyFileBar .customCategoryList a.showing{
+    /*Gradients*/
+    background:rgb(247,255,224) none no-repeat 91px 2px; /* Old browsers */
+
+    color: #626933;
+    padding-left:24px;
+    position:relative;
+    text-shadow:0 1px 1px rgba(255,255,255,1);
+
+    /*Animation*/
+    -webkit-transition: all 0.2s ;
+    -moz-transition: all 0.2s ;
+    -o-transition: all 0.2s ;
+    transition: all 0.2s ;
+}
+
+.prettyMapList .prettyFileBar .customCategoryList a.showing:after,
+.prettyMapList .prettyFileBar .prettyFileFilters a.showing:after
+{
+    content:"";
+    background:transparent url(../images/icons/silk_icons/tick.png) no-repeat 0 0;
+    display:block;
+    height:16px;
+    opacity:0.8;
+    position:absolute;
+    top:3px;
+    left:3px;
+    width:16px;
+}
+
+
+.prettyMapList .prettyFileBar .categoryList li{
+    float:left;
+    margin-right:5px;
+    margin-bottom:1px;
+    width: calc(50% - 5px);
+}
+
+
+.prettyMapList .prettyFileBar .categoryList .btn{
+  line-height: 32px;
+
+    margin-left:0;
+    padding: 6px 4px;
+
+    /*Animation*/
+    -webkit-transition: all 0.2s ;
+    -moz-transition: all 0.2s ;
+    -o-transition: all 0.2s ;
+    transition: all 0.2s ;
+}
+
+/*Message*/
+.prettyMapList .prettyMessage{
+    /*Gradient background*/
+    border: 1px solid #064B8D;
+    background: #FBF9F9; /* Old browsers */
+    z-index: 6;
+    /*Rounded corners*/
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+
+        margin: 11px 0;
+        padding: 22px 40px;
+    position:relative;
+    margin-top: -40px;
+    margin-bottom: 11px;
+}
+
+
+.prettyMapList .prettyMessage a{margin-left:10px;}
+
+/*SEARCH*/
+.prettyMapList .prettyFileBar .prettyMapListSearch{
+    display:inline-block;
+    *display:inline;
+    padding:0;
+    text-align:left;
+    zoom:1;
+    width: 100%;
+}
+
+.prettyMapList .prettyFileBar .combo{position:relative;}
+
+body .prettyMapList .prettyFileBar .combo .prettySearchValue{width:100px;}
+
+.prettyMapList .prettyFileBar .distanceSelector{
+    border: 0px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom:0;
+    padding:5px 9px;
+    float: left; width: 100%;
+    height: 43px;
+}
+
+
+
+/*Search box, directions box*/
+.prettyMapList .directionsPostcode,
+.prettyMapList .prettyFileBar .prettyMapListSearch input,
+.prettyMapList .prettyFileBar .prettySearchValue, .prettyMapList .prettyFileBar .distanceSelector, .prettyMapList .customCategoryList a.showFilterBtn{
+    /* Rectangle 325 Copy: */
+    background: #FFFFFF;
+    border: 1px solid #1C1B19;
+    border-radius: 3px;
+    height: 46px;
+    padding: 12px;
+    font-size: 16px;
+    line-height: 20px;
+    color: #4D4D4D;
+    display: inline-block;
+    float: left;
+    width: 100%;
+    -webkit-appearance: none;
+}
+
+
+/* Drop down carrot icon */
+#Map-List-Search .drop-down-selector select.distanceSelector{
+    padding-right: 30px;
+}
+.drop-down-selector::after{
+    content: " ";
+    position: absolute;
+    right: 12px;
+    top:42px;
+    width: 12px;
+    height: 10px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image:url(../../../themes/mizunotheme2015/images/store-finder/carrot.png);
+    z-index: 99;
+    pointer-events: none;
+}
+.btn.drop-down-selector::after{
+    right: 12px;
+    top: 18px;
+}
+
+ .prettyMapList .customCategoryList a.showFilterBtn  {  
+    padding-top: 11px;
+    padding-left: 14px;
+    text-align: left
+}
+/*Search box with focus*/
+.prettyMapList .directionsPostcode:focus,
+.prettyMapList .prettyFileBar .prettyMapListSearch input:focus,
+.prettyMapList .prettyFileBar .prettySearchValue:focus{
+    box-shadow:0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+
+    border-color: #1940A1;
+    color:#47494C;
+}
+
+
+
+/*Search box error*/
+.prettyMapList .prettyFileBar .prettySearchValue.error{border-color:#f00;color:#666;background-image:none;}
+
+/*Search button*/
+.prettyMapList .prettyFileBar .prettyMapListSearch a{
+    cursor:pointer;
+    display:inline-block;
+    *display:inline;/*ie6 and 7*/;
+        margin-left:0;
+    zoom:1;/*ie6 and 7*/
+}
+
+/*Clear search function*/
+.prettyMapList .prettyFileBar .prettyMapListSearch .clearSearch{margin-left:3px;}
+
+.prettyMapList .prettyListItems{min-height:150px;}
+
+/*LOADING*/
+.prettyMapList .prettyListItems.loading{
+    background:#fff url("../images/loading32.gif") no-repeat 50% 50%;
+    height:200px;
+}
+
+.prettyMapList .prettyListItems.loading a,
+.prettyMapList .prettyListItems.loading li{
+    display:none;
+}
+
+/*GEOLOCATING*/
+.prettyMapList .getDirections .getdirectionsgeo,
+.prettyMapList .getDirections .getdirectionsgeo:hover,
+.prettyMapList .getDirections .getdirectionsgeo:active{
+        background:#fff url("../images/target.png") no-repeat 50% 50%;
+        margin-left:3px;
+        padding:5px;
+        text-indent:-9000px;
+        width:15px;
+}
+
+.prettyMapList .getDirections .getdirectionsgeo:hover{background-color:#eee}
+
+.prettyMapList .getDirections .smallLoading,
+.prettyMapList .getDirections .smallLoading:hover{
+        background:#fff url("../images/loading16.gif") no-repeat 50% 50%;
+}
+
+
+.prettyMapList .viewLocationPage{margin-top:10px;}
+
+/*Fixes for common template issues
+Feel free to remove or tweak these if you run into issues
+=========================================*/
+
+.mapHolder img{
+    box-shadow: none !important;
+    visibility: visible !important;
+}
+
+/*CUSTOM PAGE TEMPLATE*/
+/*The map box*/
+.mapHolder{height:350px;width:100%;}
+
+#SingleMapLocation{
+    -webkit-box-shadow:  0px 3px 2px 0px rgba(0, 0, 0, 0.2);
+            box-shadow:  0px 3px 2px 0px rgba(0, 0, 0, 0.2);
+
+    background-color:#fff;
+    border:solid 1px #ccc;
+    margin-bottom:15px;
+    padding:5px 5px 0 5px;
+}
+/*The address box*/
+#MapAddressContainer{
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    background-color:#f9f9f9;
+    border:solid 1px #ccc;
+    display:inline-block;
+    margin:30px 0 20px 0;
+    padding:10px;
+    width:100%;
+
+}
+#MapAddressLabel
+{
+    color:#888;
+    display:inline-block;
+    font-size:0.8em;
+    margin-bottom:5px;
+}
+
+#MapAddress{
+
+}
+
+.maplist_featuredimage{
+    -webkit-box-shadow:  0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+            box-shadow:  0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+
+    border:solid 1px #ccc;
+    margin:0 10px 10px 0;
+    padding:5px;
+}
+
+#MaplistBack{margin:5px 0 10px 0;}
+
+/*Map Positioning
+============================*/
+
+/*Map to left*/
+.leftmap .mapHolder{float:left;margin-right:1%;width:49%;}
+.leftmap #ListContainer{float:left;width:49%;  }
+.leftmap .prettyFileBar{float:left;width:49%;}
+
+/*Map to right*/
+.rightmap .mapHolder{float:right;margin-right:0;}
+.rightmap #ListContainer{float:left; box-sizing: border-box;  overflow-y: scroll; width: 100%;}
+.rightmap .prettyFileBar{float:left; width: calc(30%); padding: 0px; }
+
+
+@media only screen and (max-width: 768px){
+    .rightmap .mapHolder {display:none;}
+    .rightmap .prettyFileBar, .rightmap #ListContainer {width:100%;}
+}
+
+/*Accordion*/
+
+.location-accordion .location-list{
+    cursor:pointer;
+    list-style-type:none;
+    margin:0;
+    padding:10px;
+}
+
+.location-accordion .location-list.active{background-color:#ccc;}/*Selected list*/
+.location-accordion .location-list .active{font-weight:bold;}/*Selected item*/
+
+#main .location-accordion .show-locations,
+.location-accordion .show-locations{
+    background-color:#666;
+    color:#fff;
+    cursor:pointer;
+    font-size:1.2em;
+    margin:0 0 1px 0;
+    padding:10px;
+}
+
+/* Single map location
+============================*/
+.FullMapPage #SingleMapLocation{height:300px;width:100%;}
+
+.FullMapPage .infoWindowContainer .infoWindow h3{margin-bottom:0 !important;}
+.FullMapPage .infoWindow .infowindowContent{
+    font-size:13px;
+    height: 160px;
+    overflow:auto;
+    padding-top:10px;
+}
+.FullMapPage .infoWindow .infowindowContent .locationImage{
+    float:left;
+    padding:0 10px 10px 0;
+}
+
+.FullMapPage .address,
+.FullMapPage .openinghours,
+.FullMapPage .telephone{padding-left:170px;position:relative;}
+
+.FullMapPage .address span,
+.FullMapPage .openinghours span,
+.FullMapPage .telephone span{
+    font-weight: bold;
+    left:0;
+    position:absolute;
+}
+
+.FullMapPage div.mapLocationDirectionsHolder,
+.FullMapPage div.mapLocationDirectionsHolder:hover{
+    border:none;
+    margin:0;
+}
+
+.FullMapPage div.mapLocationDirectionsHolder > div {
+    border: none;
+    margin-top: 15px;
+    padding: 0;
+    border-top: solid 1px #ccc;
+}
+
+
+/*RESPONSIVE STUFF*/
+@media only screen and (max-width: 767px){
+    /*Make the rightmap and left map go to normal at small screens*/
+    body .leftmap #ListContainer,
+    body .leftmap .prettyFileBar,
+    body .leftmap .mapHolder,
+    body .rightmap #ListContainer,
+    body .rightmap .mapHolder,
+    body .leftmap .prettyFileBar
+    {
+        float:none;
+        width:100%;
+    }
+}
+
+/* Map List
+
+#SingleMapLocation {display: none;}
+.single-maplist .maplist_featuredimage, .single-maplist #MapAddressContainer {display:none}
+ */
+ 
+ 
+#home-hero .prettyMapList .prettyFileBar {
+position: absolute;
+width: 240px;
+top: 128px;
+left: 44px;
+z-index: 99;
+background: #FBFBFB;
+padding: 21px;
+border-radius: 7px;
+border: 2px solid #004290;
+}
+#home-hero .prettyMapList .prettyFileBar h4 {
+    color: #004290; text-shadow: 0 0 0 #fff;
+}
+
+#home-hero .prettyMapList .prettyFileBar p {
+    font-size: 14px; line-height: 20px; text-align: center;
+}
+#home-hero .prettyMapList .prettyFileBar .customCategoryList {
+display: none;
+}
+#home-hero .prettyMapList .prettyFileBar label {font-size: 14px;}
+#home-hero .prettyMapList .prettyFileBar label, #home-hero .prettyMapList .prettyFileBar select {display:block;}
+#home-hero .prettyMapList .prettyFileBar input, #home-hero .prettyMapList .prettyFileBar select {margin-bottom: 12px;}
+
+#home-hero .prettyMapList .prettyFileBar input, #home-hero .prettyMapList .prettyFileBar select {
+    height: 42px; border: 1px solid #979797; border-radius: 7px; width: 175px;
+    font-size: 17px; font-weight: bold;
+}
+
+#home-hero #ListContainer {display: none;}
+.product-image > img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media only screen and (max-width: 767px){
+    #home-hero .prettyMapList .prettyFileBar {
+          width: 100%;
+          top: 62px;
+          right: 0;
+          left: 0;
+          z-index: 99;
+          border-radius: 0;
+          border: 0px;
+          border-bottom: 2px solid #004290;
+    }
+}
+  
+
+/* new styles */
+
+.prettyFileBar {margin-top: -82px!important;}
+
+.page-template-stores .prettyFileBar p {font-size: 16px; line-height: 22px; }
+
+.sl-description {margin-bottom: 11px;}
+.sl-description p { margin: 0;  }
+
+#main .prettyFileBar .getdirectionsgeo {background: #00A3DA; width: 100%; float: none; display: block; margin: 0 auto; color: #fff; height: 46px; border-radius: 5px; font-size: 16px;}
+
+.store_image {
+    position: absolute;
+    margin: 0;
+    width: 122px;
+    height: 122px;
+    right: 8px;
+    top: 8px;
+  }
+.store_image img{width: 100%; height: auto;   background: #fff;}
+li.performance-fitting-centre .store_image img {margin-top: 0; padding: 0; margin-right: 0;}
+.store_image img.stores_pfc {background: none; padding-top: 12px!important;}
+
+li.performance-fitting-centre .description, li.performance-fitting-centre .directions { background: #F3F3F3; position: relative; padding: 8px 6px 0px 6px;}
+li.performance-fitting-centre .directions {width: calc(100% - 24px);}
+
+
+.description {    padding-top: 6px;}
+.description p, .description h2{    
+    font-family: "AvenirNext";
+    font-size: 14px;
+    color: #514F4F;
+    line-height: 20px;
+    font-weight: 500;
+    margin: 0;
+    margin-bottom: 4px;
+}
+
+.description p {
+    font-size: 14px;
+    color: #636363;
+    line-height: 22px;
+    font-weight: normal;
+    margin-bottom: 11px;
+}
+.mapcategories {width: 100%; display: block;}
+.cat_dir {float:right; width: 120px;}
+.mapcategories {margin-bottom: 45px;}
+.mapcategories span span { width: 12px; height: 33px; text-indent: -9999px; display: inline-block; float: left; margin: 0; }
+
+
+.cat_dir .swing-dna-and-stockist { 
+    border: 0px; background: url(../../../themes/mizunotheme/images/stores/dna-blue-icon.png) #fff center center no-repeat; background-size:12px 21px; margin-left: 1px;)
+}
+.cat_dir .performance-fitting-centre { 
+    border: 0px;  background: url(../../../themes/mizunotheme/images/stores/pfc-white-icon.png) #fff center center no-repeat; background-size:36px 14px; margin-bottom: 4px; display: none;
+}
+
+.categoryList {padding-top: 0px;}
+.categoryList ul li a::before {
+    width: 46px;
+    height: 46px;
+    text-indent: -9999px;
+    border-radius: 0;
+    display: inline-block;
+    float: left;
+    margin: 0;
+    content: '';
+    margin-top: -8px;
+    margin-left: 0px;
+  }
+.categoryList ul li {width: 50%;}   
+
+.categoryList ul li {margin-right: 10px;}
+.categoryList ul li.performance-fitting-centre a::before {  float:left; background: url(../../../themes/mizunotheme2015/images/head-pfc.png) #fff center center no-repeat; background-size:36px 14px;  }
+.categoryList ul li.swing-dna-and-stockist a::before {  float:left; background: url(../../../themes/mizunotheme/images/stores/dna-blue-icon.png) #fff center center no-repeat; background-size:16px 28px;}
+
+
+.categoryList ul li a {
+  line-height: 23px;
+  margin-top: -12px;
+
+}
+
+.prettyMapList .prettyFileBar .categoryList li{
+ display: none;
+}
+.prettyMapList .prettyFileBar .categoryList .btn {
+    padding-bottom: 0;
+    color: #333;
+    font-size: 11px;
+    line-height: 15px;
+    padding-top: 7px;    
+}
+.prettyMapList .prettyFileBar .categoryList ul li.performance-fitting-centre, .prettyMapList .prettyFileBar .categoryList ul li.swing-dna-and-stockist {display: inline-block;}
+
+
+#main .doPrettySearch {
+background-image: linear-gradient(-180deg, #3E67CF 0%, #0A308F 100%);
+border: 2px solid #FFFFFF;
+border-radius: 4px;
+height: 46px;
+width: 87px;
+color: #fff;
+font-size: 16px;
+color: #fff;
+margin-top: 24px;
+padding-top: 8px;
+}
+#main .doPrettySearch:hover {background-color: #005b79; text-decoration: none;}
+.getDirections a.getdirections, .getDirections a.getdirectionsgeo {float: left; width: 42px; height: 42px; margin: 0; margin-right: 5px; display: block; background: #00A3DA; color: #fff;   font-size: 16px;  padding-top: 7px;} 
+.prettyMapList .getDirections input {width: calc(100% - 84px - 10px)}
+#ListContainer .directions_tab:hover { color: #34383B; }
+.doPrettySearch:hover { background-color: #34383B;}
+
+.cat_icon {float: left; width:24px; margin-right:0;}
+
+.description .cat_dir{ margin:0; }
+.description { width:  calc(100% - 24px); } 
+
+.directions {
+    display: block;
+    clear: left;
+    float: left;
+    margin: 0;
+    margin-left: 24px;
+    }
+.distance_tab, .directions_tab {font-size:13px; line-height: 22px; display: block;}
+.distance_tab { color: #979797;}
+.directions_tab {background: url(../../../themes/redballoon/images/stores/dir.png) left center no-repeat; background-size: 11px 11px; padding-left: 16px; color: #00A3DA;}
+.getDirections {
+  position: relative;
+}
+  
+.page-template-stores .prettyFileBar .categoryList p {font-size: 14px; margin: 0; padding-top: 0;}  
+
+
+.show_map { color: #4D86C2; }
+.col-lg-14 #ListContainer .directions_tab { display: none;}
+
+.append_direction_link {
+float: left;
+  clear: both;
+  margin-top: 0;}
+  
+.infoWindow {font-family: "titillium";}
+.infoWindow h3 {font-size: 16px; margin-top: 0;}
+
+
+  
+  
+/* Direction modal */
+ 
+.fancybox-inner .directions_tab {display: none;}
+.fancybox-inner .getDirections { padding-top: 33px;}
+.fancybox-inner .getDirections label {color: #333;}
+.fancybox-inner .directions {float: none;}
+.fancybox-inner .distance_tab {display:none;}
+
+
+
+.page-id-1691.page-template-stores #main .doPrettySearch {
+    width: auto;
+    margin-left: 10px;
+}
+
+.page-id-1691.page-template-stores label {
+    color: #FFFFFF;
+}
+/* Responsive */
+
+
+@media only screen and (max-width: 1024px){
+    
+    /*#main .doPrettySearch {width: 42px; background-position: center center; font-size: 0px; text-indent: -9999px;  padding-left: 0; padding-top: 7px;}*/
+
+}
+
+
+@media only screen and (min-width: 768px){
+
+    .categoryList {
+  z-index: 3;
+  position: relative;   
+    }
+
+    .fill {
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    .rightmap .mapHolder {
+      float: right;
+      margin-right: 0;
+     }
+    
+    .rightmap .prettyFileBar {
+      position: absolute;
+      width: calc(100%);
+      z-index: 5;  
+    }
+    
+    
+    .rightmap #ListContainer {
+      float: left;
+    }
+    
+    .prettyMapList .map {
+      float: left;
+      width: 50%;
+    }
+    .prettyMapList .map.performance-fitting-centre {
+      float: left;
+      width: 100%;
+    }   
+    
+    
+    #ListContainer ul li:nth-child(2n+1){
+        clear: both;
+    }
+    
+    .page-template-stores h1 {
+    
+        font-family: "AvenirNextCondensed";
+        font-size: 55px!important;
+        color: #FFFFFF;
+        line-height: 66px!important;
+        text-shadow: 0px 1px 1px rgba(0,0,0,0.98);  
+        font-weight: 600!important;
+        width: auto;
+        height: auto;
+        margin: 0 auto 0;
+        text-align: center;
+        display: block!important;
+        margin-top: 48px!important;
+    }
+    
+    .page-template-stores #page-title {
+        height: 252px; background: url(../../../themes/mizunotheme2015/images/stores/stores-head.jpg); background-size: cover;
+    }
+    .page-template-stores #page-title #article-title { height: 262px; }
+    
+    .page-template-stores h1 span {
+      display: inline-block; float: none;
+      width: 66px;
+      height: 66px;
+      text-indent: -99999px;
+      background: url(../../../themes/redballoon/images/grad-logo.png);
+      background-size: 66px 66px;
+      margin-top: -33px;
+      margin-right: 12px;
+    }
+    
+    #search-form-container {
+      width: 100%;
+      z-index: 4;
+      position: relative;
+    }
+
+    .prettyMapList .prettyFileBar .categoryList li {
+        margin: 0 10px 0 0;
+        width: calc(50% - 10px );
+        background: #fff;
+        border-radius: 5px; 
+        height: 46px;
+    }
+    
+
+}
+
+.page-template-stores label {
+    font-weight: 600;
+    font-family: "AvenirNextCondensed";
+    font-size: 16px;
+    color: #FFFFFF;
+    line-height: 24px;  
+    margin: 0;
+}
+
+@media only screen and (max-width: 767px){
+
+    .page-template-stores.page-id-1246 label {
+        color: #333;
+    }
+
+    .categoryList {width: 100%;}
+    
+    .prettyMapList .prettyFileBar .categoryList li {
+      width: calc(50% - 5px);   
+    }
+    .prettyMapList .map {
+      float: left;
+      width: 100%;
+    }
+    #search-form-container {
+      width: 100%; 
+      border: 0;
+      z-index: 4;
+      position: relative;
+      
+    }   
+    
+    #search-form-container form input, #search-form-container form select {
+      z-index: 67;
+      position: relative;   
+    }
+
+    
+    //#distanceSelector, .show_map { display: none; }
+    #main .doPrettySearch{
+        width: 100%;
+        margin-top: 27px;
+        border: none;
+    }
+
+    .page-id-1691.page-template-stores #main .doPrettySearch {
+        width: calc(50% - 10px);
+        margin-left: 10px;
+        overflow: hidden;
+        height: 46px;
+        margin-top: 23px;
+    }
+
+    .rightmap .mapHolder, .rightmap #ListContainer {
+      margin-top: 48px;
+    }
+    
+    /* reduces width on contry search bar on demo day page*/
+    .prettyMapList .customCategoryList a.showFilterBtn{
+        width: calc(100% - 10px);
+    }
+
+    .directions.hide_dir .show_map{
+        display: none;
+    }
+
+    
+}
+
+@media only screen and (max-width: 640px){
+    .prettyMapList .prettyFileBar .categoryList li{
+        width: calc(100% - 5px);
+    }
+    .prettyMapList .prettyFileBar .categoryList {
+        margin-top: 0;
+    }   
+
+}
+
+/* Demo Days */
+    .customCategoryList .demo-day   {display: none;}
+    .prettyFileBar.clearfix {     margin-top: 0 }
+    .page-id-1691.page-template-stores #article-title span.subhead p {
+      font-size: 17px;
+      line-height: 26px;
+      margin: 54px 0 0;
+      color: #fff;
+    }
+    
+    .page-id-1691.page-template-stores #page-title {
+        background: url(../../../themes/redballoon/images/stores/dd-head.jpg); background-size: cover;
+    }
+    .page-id-1691.page-template-stores #article-title h1{
+        color: #fffffe;
+    }
+    .page-id-1691.page-template-stores #search-form-container {
+        margin-top:0;
+    }
+    .page-id-1691 .prettyMapList .map  {
+    width: calc(33.333% - 10px); margin-right: 10px; border: 0px;
+    }
+    .page-id-1691 #ListContainer {background-image: none; padding-top: 0; width: 100%;}
+    .page-id-1691 .prettyMapList .map:nth-child(3n) {margin-right:0;}
+    .page-id-1691 .directions {  margin-left: 0px; }
+    /* List boxes */
+    
+    .page-id-1691 .prettyMapList .map .cat_icon, .page-id-1691 .prettyMapList .map .store_image {display: none;}
+    .page-id-1691 .description {width: 100%; padding: 0;}
+    .page-id-1691 .description h2 {color: #514F4F}
+    .page-id-1691 #ListContainer .directions {float: none;}
+    .page-id-1691 #ListContainer ul li:nth-child(2n+1) {clear: none; }
+    .page-id-1691 #ListContainer ul li:nth-child(3n+1) {clear: both;}
+    .page-id-1691 #Map-List-Search label{
+        width: 200%;
+        max-width: none!important;
+    }
+    .dd-info {
+        background: #fff;
+        color: #2C2F35;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 3px;
+        font-weight: 500;
+    }
+    .dd-info .dd-date, .dd-info .dd-time { font-size: 14px; line-height: 22px;}
+    .dd-info .dd-date {text-align: left; padding-right: 5px;}
+    .dd-info .dd-time {text-align: left;}   
+
+
+    
+    .menuDropDown {
+        display: block;
+    }
+    .menuDropDown li { }
+
+    .mapDescription .dd-info .dd-date:before{
+        content: " ";
+        width: 12px;
+        height: 12px;
+        display: inline-block;
+        font-size: 0;
+        margin-right: 5px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-image: url(../../../themes/mizunotheme2015/images/store-finder/calender-logo.png);
+    }
+    
+@media only screen and (max-width: 480px){
+     .page-id-1691 .prettyMapList .map  {
+        width: 1000%;
+     }
+}
+
+/* Extra added styles not siure where to place..*/
+.store-search-col {padding-right: 0px!important;}
+
+.demo-page-col{
+    margin-top: 48px;
+}

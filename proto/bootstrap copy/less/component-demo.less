@@ -1,0 +1,128 @@
+.demo{
+	//.aspect-ratio(4, 3);
+	margin-bottom: 12px;
+	.bg{
+		background-color:#222;
+	}
+	.moving-element{
+		position: absolute;
+		width: 12px;
+		height: 12px;
+		background: #eee;
+		top: 0;
+		left: 0;
+	}
+}
+
+.demo-background{
+	&.transition .bg{
+		background-color:#999;
+	}
+	.bg {
+		.styleTransition(1.2s, 0.2s, background);
+	}
+}
+
+.demo-position{
+	position: relative;
+	.moving-element{
+		.styleTransition(1.2s, 0);
+	}
+	&.transition .moving-element{
+		top: calc(100% - 12px);
+		left: calc(100% - 12px);
+	}
+}
+
+.demo-transform{
+	position: relative;
+	.moving-element{
+		.styleTransition(1.2s, 0, transform);
+	}
+	&.transition .moving-element{
+		transform: translateX(150px) translateY(80px) scale(8) rotate(720deg);
+	}
+}
+
+.demo-falling-edge{
+
+}
+.demo-leading-edge{
+
+}
+
+
+
+@keyframes animation1{
+	0% { bottom: 0; }
+	20% { bottom: 120px; }
+	40% { bottom: 0; }
+	60% { bottom: 80px; }
+	80%	{ bottom: 0; }
+	90% { bottom: 20px; }
+	100% { bottom: 0;}
+}
+.demo-animation-1{
+	&.transition .moving-element{
+		animation-name: animation1;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+		//animation-direction: alternate;
+		animation-timing-function:linear;
+	}
+	.moving-element{
+		top: auto;
+		bottom: 0;
+		left: calc(50% - 6px);
+	}
+}
+
+@keyframes animation2{
+	0% {background-image:linear-gradient(to top right, #999, #222);}
+	20% {background-image:linear-gradient(to top left, #999, #222);}
+	40% {background-image:linear-gradient(to bottom left, #999, #222);}
+	60% {background-image:linear-gradient(to bottom right, #999, #222);}
+	80% {background-image:linear-gradient(to top right, #999, #222);}
+	100% {background-image:linear-gradient(to top right, #999, #222);}
+}
+.demo-animation-2{
+	&.transition .bg{
+		animation-name: animation2;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+		animation-timing-function:ease-in;
+	}
+}
+
+
+
+
+//Linear gradient hover state
+
+.demo-lgrad-hover{
+	.bg{
+		&:after, &:before{
+			.smoothTransition(0.5s);
+			.abs-cover();
+			content: " ";
+		}
+		&:after{
+			background-image: linear-gradient(to top, rgba(210, 210, 210, 1), rgba(0, 0, 0, 0));
+			opacity: 0;
+		}
+		&:before{
+			background-image: linear-gradient(to bottom, rgba(210, 210, 210, 1), rgba(0, 0, 0, 0));
+			opacity: 1;
+		}
+	}
+}
+.demo-lgrad-hover:hover{
+	.bg{
+		&:after{
+			opacity: 1;
+		}
+		&:before{
+			opacity: 0;
+		}
+	}	
+}

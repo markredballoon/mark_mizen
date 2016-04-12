@@ -1,0 +1,97 @@
+// Custom mixins which add transitions.
+
+.fadeIn(@speed; @delay; @triggerClass:show;){
+	opacity: 0;
+	transition: opacity @speed ;
+	transition-delay: @delay;
+	&.@{triggerClass}{
+		opacity: 1;
+	}
+};
+/*
+Fades in from 0 when show class is added. 
+The animation only runs on the leading edge (fade in, disapear immediatly)
+*/
+.fadeInLeading(@speed; @delay; @triggerClass:show;){
+	opacity: 0;
+	transition-delay: 0;
+	transition: opacity 0 ;
+	&.@{triggerClass}{
+		opacity: 1;
+		transition: opacity @speed ;
+		transition-delay: @delay;
+	}
+};
+
+/*
+Fades in from 0 when show class is added. 
+The animation only runs on the falling edge (appear immediatlu, fade out)
+*/
+.fadeInFalling(@speed; @delay; @triggerClass:show; ){
+	opacity: 1;
+	transition-delay: 0;
+	transition: opacity @speed ;
+	transition-delay: @delay;
+	&.@{triggerClass}{
+		opacity: 0;
+		transition: opacity 0 ;
+		transition-delay: 0;
+	}
+};
+
+
+
+// changeClass is the name of the class given to the element to produce the transition. If the transition is done completely within Js then this will not work.
+.transitionFallingDelay(@triggerClass; @delay){
+	transition-delay: @delay;
+	&.@{triggerClass}{
+		transition-delay: 0;
+	}
+}
+.transitionLeadingDelay(@triggerClass; @delay){
+	transition-delay: 0;
+	&.@{triggerClass}{
+		transition-delay: @delay;
+	}
+}
+
+// Adds specific transition to element
+.styleTransition(@speed; @delay:0; @style:all;){
+	transition: @style @speed ;
+	transition-delay: @delay;
+};
+
+// Adds a transition to every change
+.smoothTransition(@speed){
+	transition: all @speed ;
+}
+
+
+
+
+.hoverImageTransition(@initialImage; @hoverImage; @speed:0.8s; @delay:0;){
+	position: relative;
+	&:after, &:before{
+		.smoothTransition(0.5s);
+		.abs-cover();
+		content: " ";
+		pointer-events: none;
+	}
+	&:before{
+		background-image: @initialImage;
+		opacity: 1;
+	}
+	&:after{
+		background-image: @hoverImage;
+		opacity: 0;
+	}
+	&:hover{
+		&:before{
+			opacity: 0;
+		}
+		&:after{
+			opacity: 1;
+		}
+	}
+}
+

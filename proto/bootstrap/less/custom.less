@@ -1,0 +1,88 @@
+/* Custom LESS styles */
+
+/*
+
+Contents:
+
+_structural_styles
+_z-indexs
+_Reused_classes
+_page_specific
+_sidebar
+
+*/
+
+/*
+=== === === === === === ===
+_structural_styles
+=== === === === === === ===
+*/
+
+html{}
+body{}
+#main{}
+
+section{
+	position: relative;
+}
+/*
+=== === === === === === ===
+_z-indexs
+=== === === === === === ===
+*/
+body{
+	position: relative;
+}
+
+header{
+	position: relative;
+	z-index: 2;
+}
+
+#main{
+	position: relative;
+	z-index: 1;
+}
+
+
+footer{
+	position: relative;
+	z-index: 2;
+}
+
+/*
+=== === === === === === ===
+_Reused_classes
+=== === === === === === ===
+*/
+
+/*
+=== === === === === === ===
+_page_specific
+=== === === === === === ===
+*/
+
+
+/*
+=== === === === === === ===
+_media_queries
+=== === === === === === ===
+*/
+
+// Max width:
+@media screen and (max-width: @screen-md-max){}
+@media screen and (max-width: @screen-sm-max){}
+@media screen and (max-width: @screen-xs-max){}
+
+// Min Width:
+@media screen and (min-width: @screen-lg){}
+@media screen and (min-width: @screen-md){}
+@media screen and (min-width: @screen-sm){}
+
+// Specific widths:
+@media screen and (min-width: @screen-md) and (max-width: @screen-md-max){}
+@media screen and (min-width: @screen-sm) and (max-width: @screen-sm-max){}
+
+// Orientation:
+@media screen (orientation: portrait){}
+@media screen (orientation: landscape){}
