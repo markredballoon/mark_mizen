@@ -6,6 +6,7 @@ Contents:
 
 _structural_styles
 _z-indexs
+_general_styles
 _Reused_classes
 _page_specific
 _sidebar
@@ -52,6 +53,15 @@ footer{
 
 /*
 === === === === === === ===
+_general_styles
+=== === === === === === ===
+*/
+a{
+	/* Adds opacity, background-color, and color transitions. The base transition speed is 0.5s */
+	.fadeTransition();
+}
+/*
+=== === === === === === ===
 _Reused_classes
 === === === === === === ===
 */
@@ -69,20 +79,20 @@ _media_queries
 === === === === === === ===
 */
 
-// Max width:
+/* Max width: */
 @media screen and (max-width: @screen-md-max){}
 @media screen and (max-width: @screen-sm-max){}
 @media screen and (max-width: @screen-xs-max){}
 
-// Min Width:
+/* Min width */;
 @media screen and (min-width: @screen-lg){}
 @media screen and (min-width: @screen-md){}
 @media screen and (min-width: @screen-sm){}
 
-// Specific widths:
+/* Specific widths: */
 @media screen and (min-width: @screen-md) and (max-width: @screen-md-max){}
 @media screen and (min-width: @screen-sm) and (max-width: @screen-sm-max){}
 
-// Orientation:
+/* Orientation: */
 @media screen (orientation: portrait){}
 @media screen (orientation: landscape){}

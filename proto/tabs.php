@@ -9,7 +9,7 @@
     <meta name="author" content="">
 
     <!-- Page Title -->
-	<title>PAGE TITLE</title>
+	<title>Tabs</title>
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
@@ -27,7 +27,7 @@
 	<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
 	<meta name="msapplication-TileColor" content="#254c75">
 	<meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png">
-	
+
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="style.css?version=1" />
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -38,6 +38,19 @@
 
 
 <div class="container">
+  <div class="row">
+    <div class="col-xs-24">
+      <h1>Tabs</h1>
+      <p>
+        clicking on one of the tabs at the top will open a different content section at the bottom.
+      </p>
+      <p>
+        css: proto/bootstrap/less/rb/tabs.less
+        <br>
+        js: proto/js/custom.js
+      </p>
+    </div>
+  </div>
 	<div class="row">
 
 	<div id="tabs1" class="tabs-outer">
@@ -128,16 +141,11 @@
 <script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8" ></script>
 
 <!-- Bootstrap core JavaScript -->
-<script src="bootstrap/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>  
-
-<!-- Plugin files -->
-<script src="plugins/twitterfeed/twitterfeed.js" type="text/javascript" charset="utf-8"></script>
-<link rel="stylesheet" href="plugins/twitterfeed/twitterfeed.css" />
+<script src="bootstrap/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 
 
 <!-- Custom JS files -->
 <script src="js/custom.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/bg-carousel.js" type="text/javascript" charset="utf-8"></script>
 
 
 </body>

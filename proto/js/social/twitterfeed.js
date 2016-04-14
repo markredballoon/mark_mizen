@@ -9,7 +9,7 @@ $(function(){
 		var url = window.location.href;
 		var urlarray = url.split('/');
 		var domain = urlarray.indexOf('domain.local');
-		
+
 		getTweetsUrl = 'http://domain.local/'+urlarray[(domain+1)]+'/inc/twitterfeed/get_tweets.php';
 	}
 
@@ -115,7 +115,7 @@ $(function(){
 						};
 					};
 				});
-				
+
 				$tweets.append('<span class="follow-twitter hide-tweet"><a href="https://twitter.com/intent/follow?screen_name=PapajohnsUK">Follow Us on Twitter</a></span>')
 				$('.tweets-container').html($tweets);
 

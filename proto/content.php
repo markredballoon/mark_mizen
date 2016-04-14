@@ -9,7 +9,7 @@
     <meta name="author" content="">
 
     <!-- Page Title -->
-	<title>PAGE TITLE</title>
+	<title>Page Content</title>
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
@@ -27,7 +27,7 @@
 	<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
 	<meta name="msapplication-TileColor" content="#254c75">
 	<meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png">
-	
+
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="style.css?version=1" />
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -38,6 +38,7 @@
 <!--header goes here -->
 
 <div id="main">
+  <h1 style="background-color:red;">THIS PAGE IS DEPRACTED. Use <a href="examples.php">examples.php</a> or <a href="waterfall.php">waterfall.php</a></h1>
 
 <!--hero goes here. The hero can also go within the container, if say it wants to move around with the sidebar.-->
 <div class="container">
@@ -102,7 +103,7 @@
 <script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8" ></script>
 
 <!-- Bootstrap core JavaScript -->
-<script src="bootstrap/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>  
+<script src="bootstrap/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 
 <!-- Custom JS files -->
 <script src="js/custom.js" type="text/javascript" charset="utf-8"></script>

@@ -9,7 +9,7 @@
     <meta name="author" content="">
 
     <!-- Page Title -->
-	<title>PAGE TITLE</title>
+	<title>Forms</title>
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
@@ -27,7 +27,7 @@
 	<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
 	<meta name="msapplication-TileColor" content="#254c75">
 	<meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png">
-	
+
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="style.css?version=1" />
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -35,10 +35,20 @@
 </head>
 <body id="body" class="page-template-homepage page-id-# page-slug">
 <div id="main">
-	
+
 <div class="container">
 	<div class="row">
-		<h2 class="text-center">Form Example</h2>
+    <div class="col-xs-24 text-center">
+      <h1>Form Example</h1>
+      <p>
+        This is an example of the html output from contact form 7
+      </p>
+      <p>
+        Styles for this form are within proto/bootstrap/less/rb/forms.less and proto/bootstrap/less/rb/form-additions.less
+        <br/>
+        The javascript for the number selectors are at the bottom of the html.
+      </p>
+    </div>
 		<form role="form" class="col-sm-12 col-sm-offset-6">
 
 			<div class="form-group">
@@ -70,7 +80,7 @@
 					checkbox_single
 				</label>
 			</div>
-			
+
 
 			<h4>Multiple checkboxes</h4>
 			<div class="checkbox">
@@ -103,7 +113,33 @@
 				</select>
 			</div>
 
-			
+      <div class="additional-field hidden">
+        <div class="form-group clearfix child-2-name">
+          <label>Hidden_field_text</label>
+          <input class="form-control" name="child-2-name" type="text" value="" aria-invalid="false">
+        </div>
+        <div class="form-group clearfix child-2-dob">
+          <label>Hidden_field_date</label>
+          <input class="form-control" name="child-2-dob" type="date" aria-invalid="false">
+        </div>
+      </div>
+      <div class="additional-field hidden">
+        <div class="form-group clearfix child-2-name">
+          <label>Hidden_field_text_2</label>
+          <input class="form-control" name="child-2-name" type="text" value="" aria-invalid="false">
+        </div>
+        <div class="form-group clearfix child-2-dob">
+          <label>Hidden_field_date_2</label>
+          <input class="form-control" name="child-2-dob" type="date" aria-invalid="false">
+        </div>
+      </div>
+      <div class="additional-button">
+        <span>Add another feild:
+          <div class="increment up"></div>
+        </span>
+      </div>
+
+
 			<h4>Radio buttons</h4>
 			<div class="radio">
 				<label><input type="radio" name="radio_1">Option 1</label>
@@ -114,8 +150,8 @@
 			<div class="radio disabled">
 				<label><input type="radio" name="radio_1" disabled>Option 3</label>
 			</div>
-			
-			
+
+
 			<h4>Inline Radio buttons</h4>
 			<div class="radio">
 				<label class="radio-inline"><input type="radio" name="radio_2">Option 1</label>
@@ -135,19 +171,20 @@
 				<input type="text" class="form-control" id="robot_check">
 			</div>
 
-
-			<div class="form-group">
-				<label for="number_1">number_1:</label>
-				<button class="number-controls" data-number-value="-1">-</button>
-				<input type="number" class="form-control no-spinner" id="number_1" value="0" min="0" max="99">
-				<button class="number-controls" data-number-value="1">+</button>
-			</div>
-			<div class="form-group number-w-controls">
-				<label for="number_2">number_2:</label>
-				<button class="number-controls" data-number-value="-1">-</button>
-				<input type="number" class="form-control no-spinner" id="number_2" value="0" min="0" max="99">
-				<button class="number-controls" data-number-value="1">+</button>
-			</div>
+      <div class="quantity-select">
+        <div class="increment up"></div>
+        <div class="form-group clearfix book-2015">
+          <label>Number_1</label>
+          <input class="custom-buttons form-control" name="number1" type="number" value="0" min="0" max="99" step="" aria-invalid="false"></div>
+        <div class="increment down"></div>
+      </div>
+      <div class="quantity-select">
+        <div class="increment up"></div>
+        <div class="form-group clearfix book-2015">
+          <label>Number_2</label>
+          <input class="custom-buttons form-control" name="number1" type="number" value="0" min="0" max="99" step="" aria-invalid="false"></div>
+        <div class="increment down"></div>
+      </div>
 
 			<button type="submit" class="btn btn-default">Submit</button>
 
@@ -156,33 +193,6 @@
 	</div>
 </div>
 
-<style>
-input[type=number].no-spinner::-webkit-inner-spin-button,
-input[type=number].no-spinner::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-.number-controls{
-	width: 40px;
-	height: 40px;
-	display: inline-block;
-	box-sizing: border-box;
-}
-.number-controls ~ input[type="number"]{
-	width: 40px;
-	height: 40px;
-	padding: 0px 8px;
-	display: inline-block;
-	border-radius: 0;
-	box-sizing: border-box;
-}
-.number-controls ~ label{
-	display: block;
-}
-
-</style>
-
 </div><!--main-->
 
 <!-- JS files -->
@@ -190,34 +200,45 @@ input[type=number].no-spinner::-webkit-outer-spin-button {
 <script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8" ></script>
 
 <!-- Bootstrap core JavaScript -->
-<script src="bootstrap/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>  
+<script src="bootstrap/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 
 <!-- Custom JS files -->
 <script src="js/custom.js" type="text/javascript" charset="utf-8"></script>
 
 <script>
-jQuery(document).ready(function($) {
-	$('.number-controls').click(function(e) {
-		e.preventDefault();
-		var changeBy = parseInt( $(this).data('number-value') );
-		var targetId = $(this).siblings('input[type="number"]').attr('id');
+// Add quantity selectors for number elements
+function quantitySelectChange(parentEle, val){
+	var $target = parentEle.find('input');
+	var currentValue = 0;
+	if ($target[0].value){
+		currentValue = parseInt($target[0].value);
+	}
+	if ( currentValue+val >= $target.attr('min') && currentValue+val <= $target.attr('max') ){
+		$target[0].value = currentValue+val;
+	}
+}
+$(document).ready(function() {
+  $('.quantity-select .increment').click(function(event) {
+		var changeBy = 0;
+		if ( $(this).hasClass('up') ){
+			changeBy = 1;
+		}
+		else if ( $(this).hasClass('down') ){
+			changeBy = -1;
+		};
+		var $thisParent = $(this).parent();
+		quantitySelectChange( $thisParent, changeBy);
+	});
 
-		var targetValue = document.getElementById(targetId).value;
-		targetValue = parseInt(targetValue);
-
-		targetValue = targetValue + changeBy;
- 
-		if (
-			targetValue >= parseInt($('#'+targetId).attr('min')) 
-			&& targetValue <= parseInt($('#'+targetId).attr('max')) 
-			){
-			document.getElementById(targetId).value = targetValue;
+  // Show 1 hidden field on click. If there are no more to show then hide the button.
+  $('.additional-button .increment').click( function(){
+		if ( $('.additional-field.hidden').length > 1 ) {
+			$('.additional-field.hidden:eq(0)').removeClass('hidden');
 		}
 		else{
-
-			return false
+			$('.additional-field.hidden:eq(0)').removeClass('hidden');
+			$('.additional-button').addClass('hidden'); // Change this class to something other than hidden if you want the button to change in some other way.
 		};
-
 	});
 });
 </script>

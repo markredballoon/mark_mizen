@@ -1,0 +1,167 @@
+/* Variables */
+
+/* Size of the header */
+@header-height-base: 						80px;
+@header-height-responsive: 			100px;
+
+/* Logo dimentions and file location */
+
+@logo-image: 										url(../../../images/placeholder.png);
+@logo-image-responsive: 				@logo-image;
+
+@logo-width-default: 						auto;
+@logo-height-default:						auto;
+
+@logo-width-header: 						@logo-width-default;
+@logo-height-header: 						@logo-height-default;
+
+@logo-width-footer:							@logo-width-default;
+@logo-height-footer: 						@logo-height-default;
+
+
+
+/* Hamburger menu icon variables*/
+@menu-icon-colour: 							@brand-primary;
+@menu-icon-width: 							23px;
+@menu-icon-height: 							2px;
+@menu-icon-border-radius: 			0;
+@menu-icon-inside-margin: 			4px; /* Margin between the span elements */
+
+/* Main navigation sizes */
+@nav-main-item-width: 					auto;
+@nav-main-item-height: 					auto;
+
+/* Header links styles */
+
+
+header{
+	min-height: @header-height-base;
+}
+
+/* Hamburger */
+.nav-toggle{
+	display: block;
+	position: relative;
+	border: none;
+	padding: 0;
+	border-radius: 0;
+	background: none;
+	.icon-bar{
+		display: block;
+    width: @menu-icon-width;
+    height: @menu-icon-height;
+		background: @menu-icon-colour;
+		border-radius: @menu-icon-border-radius;
+		//margin-bottom: 3px;
+		& + .icon-bar{
+			margin-top: @menu-icon-inside-margin;
+		}
+	}
+	&:hover{
+		/* Hover state of the hamburger*/
+	}
+	&.open{
+		/* Styles when menu is open */
+	}
+}
+
+// Default nav styles
+nav{
+	ul{
+		li{
+			/* Stuctural, try to avoid adding many styles to this element */
+			font-size: 0;
+			display: inline-block;
+			a{
+				/* Add margins and paddings to this element */
+				display: block;
+				font-size: @font-size-base;
+				span{
+					/* Type styles can go here */
+				}
+				&:hover{
+					/* Hover state of menu items */
+				}
+				&:hover, &:focus{
+					text-decoration: none; /* removes underline from the link*/
+				}
+			}
+		}
+		&.v-list>li{
+			/* List where each item fills the whole width of the containing element */
+			display: block;
+		}
+	}
+}
+
+/* Hidden sub-menus, such dropdowns or mega menus. Not limited to those two however */
+.sub-menu{
+	position: absolute;
+	display: none;
+	&.show{
+		display: block;
+	}
+}
+
+/* Megamenu styles */
+.mega-menu .sub-menu{
+	left: 0;
+	width: 100%;
+}
+
+/* Dropdown styles */
+.dropdown .sub-menu{
+
+}
+
+/* Responsive menu styles. The show class is added when the menu toggle is pressed */
+.mobile-nav{
+	display: none;
+	&.show{
+		display: block;
+	}
+}
+
+
+/* Default ogo styles that can be used anywhere on the site */
+.logo{
+	&>a{
+		.cover-bg();
+		display: block;
+		background: @logo-image;
+		background-size: @logo-width-default @logo-height-default;
+		width: @logo-width-default;
+		height: @logo-height-default;
+	}
+	&.logo-image>a{
+		/* If the logo is brought in by an image and you want to get the aspect ratio from height:auto */
+		height:auto;
+	}
+	&.logo-ar>a{
+		/* If the logo is a background image and you want to have a constant aspect ratio */
+		/* Width then Height value */
+		.aspect-ratio(16, 9);
+		.cover-bg();
+	}
+}
+/* Logo styles for the header and footer, the two places that are most likly to have a logo */
+header{
+	.logo>a{
+		width: @logo-width-header;
+		height: @logo-height-header;
+	}
+}
+
+footer{
+	.logo>a{
+		width: @logo-width-footer;
+		height: @logo-height-footer;
+	}
+}
+/*
+@media screen and (max-width: [breakpoint] ;){
+
+Add responsive menu styles here
+
+}
+*/

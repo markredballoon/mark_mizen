@@ -1,0 +1,122 @@
+/*
+These are the styles used for the custom additions to the contact form 7 form.
+
+For an example of this in action go to: 
+col.balloonhost.co.uk/apply
+col.balloonhost.co.uk/order
+*/
+
+/* Size of the input and the margin between the inputs and the buttons*/
+@qs-input-width:  38px;
+@qs-margin:       8px;
+@qs-height-base:  28px;
+
+/* '+' and '-' buttons on number elements that can be clicked to increase or decrease the value */
+.quantity-select{
+  position: relative;
+  label, .form-group{
+    display: block;
+  }
+  label{
+    /* Floats text onto the left and prevents it from streching over where the input with the buttons are */
+     float: left;
+     max-width: calc(100% - (3 * (@qs-input-width + @qs-margin) ) );
+     line-height: @qs-height-base;
+     margin-bottom: 0;
+  }
+  .form-group{
+    /* Margin on the bottom of the element*/
+    margin-bottom: 10px;
+  }
+  input{
+    /* The number element */
+    display: block;
+    float: right;
+    width: @qs-input-width;
+    margin-right: (@qs-input-width + @qs-margin);
+    padding: 3px 9px 3px;
+    height: @qs-height-base;
+    line-height: 1;
+    text-align: center;
+  }
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    /* Removes the default webkit styles */
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  &.last{
+    .form-group{
+      margin-bottom: 22px;
+    }
+  }
+}
+.increment{
+  /* Styles for the increment buttons. Also used for the additional field buttons */
+  position: absolute;
+  top: 0;
+  width: @qs-input-width;
+  background: #aaa;
+  display: block;
+  cursor: pointer;
+  border-radius: @border-radius-small;
+  font-size: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: @qs-height-base;
+  &.down{
+    right: ((@qs-input-width * 2)+(@qs-margin * 2)) ;
+    /* Create the '-' sign with css: */
+    &:before{
+      content: " ";
+      position: absolute;
+      top: 13px;
+      left: 12px;
+      width: 14px;
+      height: 3px;
+      background: #fff;
+    }
+  }
+  &.up{
+    right: 0;
+    /* Create the '+' sign with css: */
+    &:after{
+      content: " ";
+      position: absolute;
+      top: 8px;
+      left: 18px;
+      width: 3px;
+      height: 14px;
+      background: #fff;
+    }
+    &:before{
+      content: " ";
+      position: absolute;
+      top: 13px;
+      left: 12px;
+      width: 14px;
+      height: 3px;
+      background: #fff;
+    }
+  }
+  &:hover{
+    /* Hover state of the increment buttons */
+    background-color: @brand-primary;
+  }
+}
+
+/* additional field button */
+.additional-button{
+  position: relative;
+  span{
+    position: relative;
+    height: 28px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  .increment{
+    right: (0 - @qs-input-width - 8px);
+    top: -1px;
+  }
+}

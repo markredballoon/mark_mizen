@@ -9,8 +9,8 @@
     <meta name="author" content="">
 
     <!-- Page Title -->
-	<title>PAGE TITLE</title>
-	
+	<title>Bootstrap carousel</title>
+
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="style.css?version=1" />
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -27,7 +27,7 @@
 		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 		<li data-target="#myCarousel" data-slide-to="1"></li>
 		<li data-target="#myCarousel" data-slide-to="2"></li>
-	</ol>   
+	</ol>
 	<!-- Wrapper for carousel items -->
 	<div class="carousel-inner">
 		<div class="item active">
@@ -64,7 +64,20 @@
 </div><!--/myCarousel-->
 
 
+<div class="container">
+  <div class="row">
+    <div class="col-xs-24 text-center">
+      <h1>Bootstrap carousel</h1>
+      <p>
+        Copy and paste for working carousel. Requires no extra JS
+      </p>
+      <p>
+        Height comes from images within carousel.
+      </p>
+    </div>
+  </div>
 
+</div>
 
 </div><!--main-->
 <!-- JS files -->
@@ -72,9 +85,9 @@
 <script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8" ></script>
 
 <!-- Bootstrap core JavaScript -->
-<script src="bootstrap/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script> 
+<script src="bootstrap/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 
-<!--plugins--> 
+<!--plugins-->
 
 
 </body>

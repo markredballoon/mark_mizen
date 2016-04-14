@@ -9,7 +9,7 @@
     <meta name="author" content="">
 
     <!-- Page Title -->
-	<title>PAGE TITLE</title>
+	<title>Navs and header</title>
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
@@ -27,7 +27,7 @@
 	<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
 	<meta name="msapplication-TileColor" content="#254c75">
 	<meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png">
-	
+
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="style.css?version=1" />
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -97,7 +97,7 @@
 							</li>
 						</ul>
 					</li><!--/dropdown-->
-					
+
 					<li class="mega-menu toggle">
 						<a href="#/">
 							<span>
@@ -215,8 +215,16 @@
 
 <div class="container">
 	<div class="row">
+    <h1>Example header</h1>
 		<p>The megamenu is a menu with lots of content within. A dropdown is a dropdown list. The secondary menu items disapear at sm screen sizes when the mobile-nav appears(breakpoints may be better to add with media queries not with hidden-{{}} and visible-{{}} classes).</p>
 		<p>The onclick toggle should be targeted to the section you want to toggle a class on. The styles for what happens when they swap should be addded in the less.</p>
+    <p>
+      Files:
+      <br/>
+      js: proto/js/custom.js
+      <br/>
+      css: proto/bootstrap/less/rb/rb-header-nav.less
+    </p>
 	</div>
 </div>
 
@@ -225,7 +233,7 @@
 <script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8" ></script>
 
 <!-- Bootstrap core JavaScript -->
-<script src="bootstrap/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>  
+<script src="bootstrap/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 
 <!-- Custom JS files -->
 <script src="js/custom.js" type="text/javascript" charset="utf-8"></script>

@@ -12,10 +12,10 @@
   <script type="text/javascript" src="js/scroll-magic/greensock/plugins/ScrollToPlugin.min.js"></script>
   <script type="text/javascript" src="js/scroll-magic/greensock/TweenMax.min.js"></script>
   <script type="text/javascript" src="js/scroll-magic/animation.gsap.js"></script>
-  
+
 </head>
 <body>
-  
+
 <script>
 //Initialise the controler. There can be multiple controllers.
 var controller = new ScrollMagic.Controller();
@@ -65,9 +65,9 @@ h2{
       <h2 class="text-center">Pin Demo</h2>
     </div>
   </div>
-  
+
   <div id="pin"></div>
-  
+
   <div id="target">
     <div class="container">
       <div class="row">
@@ -75,13 +75,13 @@ h2{
       </div>
     </div>
   </div>
-  
+
   <div class="container">
     <div class="row">
       <h2 class="text-center">Pin Demo</h2>
     </div>
   </div>
-  
-  
+
+
 </div>
 </body>

@@ -46,13 +46,53 @@
 /* Labels [lines 567 - 587] */
 /*----------------------------------------------------------*/
 /* Labels [lines 124 - 142] */
+/* Custom mixins */
+/* Changes background style to cover, centraly aligned with no repeat on the image. */
 /*
-Fades in from 0 when show class is added. 
+Absolutly positions an element to be as large as the nearest relativly positioned ancestral element.
+The left value is to correct the position when the parent has a padding
+*/
+/*
+Adds a constant apect ratio to the element. The width must be given by the parent element.
+baseW is the base width, baseH is the base height
+*/
+/*
+Allows clicking through an element but not child elements
+*/
+/*
+Fade in mixin.
+Fades in when the strigger class is added. default trigger class is 'show'
+*/
+/*
+Fades in from 0 when show class is added.
 The animation only runs on the leading edge (fade in, disapear immediatly)
 */
 /*
-Fades in from 0 when show class is added. 
+Fades in from 0 when show class is added.
 The animation only runs on the falling edge (appear immediatlu, fade out)
+*/
+/*
+Adds a delay to the falling edge of a transition.
+*/
+/*
+Adds a delay to the leading edge of a transtion
+*/
+/*
+ Adds specific transition to element
+ */
+/*
+Adds a transition to all effects
+*/
+/*
+This mixin fades between two images.
+Normally this is impossible but by setting the backgrounds on the before and after tags and fading between the two it acts like adding a transition to the background-image css attribute
+
+Doesn't work on elements that need position to be set to anything other than relative, fixed or absolute.
+Also doesn't work if you need to use the before/after tags for something else (e.g. clearfix).
+*/
+/*
+Fade transitions to add to any elements that need to fade, change color or change background color without adding transitions to left, right or dimentional values
+the speed is at a default of 0.8s, but this can be changed
 */
 .btn-default,
 .btn-primary,

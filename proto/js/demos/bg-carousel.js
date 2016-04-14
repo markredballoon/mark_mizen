@@ -1,23 +1,34 @@
 /*
 === === === === === === ===
+This is the javascript for the bg-carousel page.
+html: ../proto/bg-carousel.php
+css: ../proto/bootstrap/less/rb/bg-carousel.less
+=== === === === === === ===
+*/
+
+/*
+=== === === === === === ===
   Global Variables
 === === === === === === ===
 
 Variables used throughout the javascript.
+
+The variable backgroundImages is set in the php of the page. This is where the sources for the background elements are bought in.
+
 */
 
 var $window = $(window);
 
-var $bgWrap = $('.bg-carousel-wrap');
-var $staticDiv = $('.bg-carousel-wrap .bg-carousel-static');
-var $animateDiv = $('.bg-carousel-wrap .bg-carousel-animate');
-var controls = '.moveBackground';
-var noBackgrounds = backgroundImages.length - 1;
-var curBackground = 0;
-var bgArray = backgroundImages ;
+var $bgWrap             = $('.bg-carousel-wrap');
+var $staticDiv          = $('.bg-carousel-wrap .bg-carousel-static');
+var $animateDiv         = $('.bg-carousel-wrap .bg-carousel-animate');
+var $controls           = $('.bg-carousel-control .move-background');
+var noBackgrounds       = backgroundImages.length - 1;
+var curBackground       = 0;
+var bgArray             = backgroundImages ;
 
 
-
+// Throttle to prevent spamming of the moveBackground function
 var throttleAction = false;
 function throttle(){
   if (throttleAction == true){
@@ -32,131 +43,83 @@ function throttle(){
   };
 };
 
-
-
 /*
 === === === === === === ===
   Callback Functions
 === === === === === === ===
 
 Functions that are called multiple times.
+
 */
+
+// Changes which of the carousel controls has the 'current' class. Background color is for clarity of which element has the current class
 function changePagination(){
-  $(controls).removeClass('current');
-  $('.bg-carousel-control '+controls).eq(curBackground).addClass('current');
+  $controls.removeClass('current').css('background-color', 'transparent');
+  $controls.eq(curBackground).addClass('current').css('background-color', 'green');
 };
 
-
-function moveBackground(target){
-  if ( !throttleAction ){
+// Moves the background to the target
+// direction can equal left or right
+function moveBackground(target, direction){
+  if ( !throttleAction && target != curBackground){
     $staticDiv.css('background-image', 'url('+bgArray[curBackground]+')');
-     
-    if (curBackground < target){
-      $('.bg-carousel-wrap').addClass('clear');
-      $animateDiv.css('background-image', 'url('+bgArray[target]+')');
-      $animateDiv.addClass('from-right');
-      setTimeout( function(){$animateDiv.addClass('animate')}, 10 );
-      setTimeout( function(){
-        $animateDiv.removeClass('from-right').removeClass('animate');
-        $staticDiv.css('background-image', 'url('+bgArray[curBackground]+')');
-        $('.bg-carousel-wrap').removeClass('clear');
-      }, 800);
-      curBackground = target;
-      setTimeout( function(){
-        $('body').addClass('hide-all-text');
-        textToggle = false;
-      }, 10);
+
+    // Which direction is the carousel going:
+    var directionClass = '';
+
+    if (direction === 'left') {
+      directionClass = 'from-left';
     }
-    if(curBackground > target){
-      $bgWrap.addClass('clear');
-      $animateDiv.css('background-image', 'url('+bgArray[target]+')');
-      $animateDiv.addClass('from-left');
-      setTimeout( function(){$animateDiv.addClass('animate')}, 10 );
-      setTimeout( function(){
-        $animateDiv.removeClass('from-left').removeClass('animate');
-        $staticDiv.css('background-image', 'url('+bgArray[curBackground]+')');
-        $bgWrap.removeClass('clear');
-      }, 800);
-      curBackground = target;
-      setTimeout( function(){
-        $('body').addClass('hide-all-text');
-        textToggle = false;
-      }, 10);
+    else if( direction === 'right' ){
+      directionClass = 'from-right';
+    }
+    else if (curBackground < target){
+      directionClass = 'from-right';
+    }
+    else {
+      directionClass = 'from-left';
     };
-    changePagination();
-    throttle();
+
+    $('.bg-carousel-wrap').addClass('clear');
+    $animateDiv.css('background-image', 'url('+bgArray[target]+')');
+    $animateDiv.addClass(directionClass);
+    setTimeout( function(){
+      $animateDiv.addClass('animate')
+    }, 10 );
+    setTimeout( function(){
+      $animateDiv.removeClass(directionClass).removeClass('animate');
+      $staticDiv.css('background-image', 'url('+bgArray[curBackground]+')');
+      $('.bg-carousel-wrap').removeClass('clear');
+    }, 800);
+    curBackground = target;
+    setTimeout( function(){
+      textToggle = false;
+    }, 10);
+
+    updateControl();
   }
+
 };
 
-//Swipe controls
+// Functions for going to the next or previous slides:
+function nextSlide(){
+  var nextBackground = curBackground + 1;
+  if (nextBackground > noBackgrounds){ nextBackground = 0 };
+  moveBackground(nextBackground, 'right');
+}
+function prevSlide(){
+  var prevBackground = curBackground - 1;
+  if (prevBackground < 0){ prevBackground = noBackgrounds};
+  moveBackground(prevBackground, 'left');
+}
 
-//Swipe functions only load when jquery mobile is loaded
-/*
-$(function() {
-  $('.infinite-carousel-wrap:not(".clear")').swipe( {
-    swipeLeft:function(event, direction, distance, duration, fingerCount) {
-      if( noBackgrounds > 1 && !throttleAction ){
-        var newSlide = 0;
-        if (curBackground === noBackgrounds-1){
-          $('.infinite-carousel-wrap').addClass('clear');
-          newSlide = 0;
-          $animateDiv.css('background-image', 'url('+bgArray[newSlide]+')');
-          $animateDiv.addClass('from-right');
-          setTimeout( function(){$animateDiv.addClass('animate')}, 10 );
-          setTimeout( function(){
-            $animateDiv.removeClass('from-right').removeClass('animate');
-            $staticDiv.css('background-image', 'url('+bgArray[curBackground]+')');
-            $('.infinite-carousel-wrap').removeClass('clear');
-          }, 800);
-          curBackground = newSlide;
-          changePagination();
-          setTimeout( function(){
-            $('body').addClass('hide-all-text');
-            textToggle = false;
-          }, 10);
-          throttle();
-        }
-        else {
-          newSlide = curBackground+1;
-          moveBackground(newSlide);
-        };
-      };
-    }
-  });
-});
-$(function() {
-  $('.infinite-carousel-wrap:not(".clear")').swipe( {
-    swipeRight:function(event, direction, distance, duration, fingerCount) {
-      if( noBackgrounds > 1 && !throttleAction ){
-        var newSlide = 0;
-        if (curBackground === 0){
-          $('.bg-carousel-wrap').addClass('clear');
-          newSlide = noBackgrounds-1;
-          $animateDiv.css('background-image', 'url('+bgArray[newSlide]+')');
-          $animateDiv.addClass('from-left');
-          setTimeout( function(){$animateDiv.addClass('animate')}, 10 );
-          setTimeout( function(){
-            $animateDiv.removeClass('from-left').removeClass('animate');
-            $staticDiv.css('background-image', 'url('+bgArray[curBackground]+')');
-            $('.infinite-carousel-wrap').removeClass('clear');
-          }, 800);
-          curBackground = newSlide;
-          changePagination();
-          setTimeout( function(){
-            $('body').addClass('hide-all-text');
-            textToggle = false;
-          }, 10);
-          throttle();
-        }
-        else {
-          newSlide = curBackground-1;
-          moveBackground(newSlide);
-        };
-      };
-    }
-  });
-});
-*/
+function updateControl(){
+  $controls.removeClass('current');
+  $controls.eq(curBackground).addClass('current');
+}
+
+// Ready function
 jQuery(document).ready(function($) {
+  updateControl();
   $staticDiv.css('background-image', 'url('+bgArray[0]+')');
 });

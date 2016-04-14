@@ -9,13 +9,53 @@
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+/* Custom mixins */
+/* Changes background style to cover, centraly aligned with no repeat on the image. */
 /*
-Fades in from 0 when show class is added. 
+Absolutly positions an element to be as large as the nearest relativly positioned ancestral element.
+The left value is to correct the position when the parent has a padding
+*/
+/*
+Adds a constant apect ratio to the element. The width must be given by the parent element.
+baseW is the base width, baseH is the base height
+*/
+/*
+Allows clicking through an element but not child elements
+*/
+/*
+Fade in mixin.
+Fades in when the strigger class is added. default trigger class is 'show'
+*/
+/*
+Fades in from 0 when show class is added.
 The animation only runs on the leading edge (fade in, disapear immediatly)
 */
 /*
-Fades in from 0 when show class is added. 
+Fades in from 0 when show class is added.
 The animation only runs on the falling edge (appear immediatlu, fade out)
+*/
+/*
+Adds a delay to the falling edge of a transition.
+*/
+/*
+Adds a delay to the leading edge of a transtion
+*/
+/*
+ Adds specific transition to element
+ */
+/*
+Adds a transition to all effects
+*/
+/*
+This mixin fades between two images.
+Normally this is impossible but by setting the backgrounds on the before and after tags and fading between the two it acts like adding a transition to the background-image css attribute
+
+Doesn't work on elements that need position to be set to anything other than relative, fixed or absolute.
+Also doesn't work if you need to use the before/after tags for something else (e.g. clearfix).
+*/
+/*
+Fade transitions to add to any elements that need to fade, change color or change background color without adding transitions to left, right or dimentional values
+the speed is at a default of 0.8s, but this can be changed
 */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
@@ -2723,6 +2763,25 @@ table th[class*="col-"] {
     border-bottom: 0;
   }
 }
+/*
+ Forms
+ --------------------------------------------------
+*/
+/*
+=====     =====     =====     =====     =====
+
+!!    IMPORTANT STYLES START ON LINE 615  !!
+
+=====     =====     =====     =====     =====
+
+Most of the styles in this file should get over-written at the end of this file.
+
+The styles brought out at the end of the file are the only bits that are worth changing within here. Most of the values are set in the variables file.
+*/
+/*
+Normalize non-controls
+Restyle and baseline non-control form elements.
+*/
 fieldset {
   min-width: 0;
   padding: 0;
@@ -3232,18 +3291,32 @@ select[multiple].input-lg {
     font-size: 14px;
   }
 }
+/*
+=====     =====     =====     =====     =====
+
+                IMPORTANT STYLES
+
+=====     =====     =====     =====     =====
+*/
+/* Label styles */
+/* Line 32 */
 label {
   display: inline-block;
   max-width: 100%;
+  /* Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141) */
   margin-bottom: 5px;
   font-weight: bold;
 }
+/* Radio and checkbox styles */
+/* Line 52 */
 input[type="radio"],
 input[type="checkbox"] {
   margin: 4px 0 0;
   margin-top: 1px \9;
+  /* IE8-9 */
   line-height: normal;
 }
+/* Line 216 */
 .radio,
 .checkbox {
   position: relative;
@@ -3254,11 +3327,13 @@ input[type="checkbox"] {
 .radio label,
 .checkbox label {
   min-height: 25px;
+  /* Ensure the input doesnt jump when there is no text */
   padding-left: 20px;
   margin-bottom: 0;
   font-weight: normal;
   cursor: pointer;
 }
+/* Line 312 */
 .radio input[type="radio"],
 .radio-inline input[type="radio"],
 .checkbox input[type="checkbox"],
@@ -3270,6 +3345,7 @@ input[type="checkbox"] {
 .radio + .radio,
 .checkbox + .checkbox {
   margin-top: -5px;
+  /* Move up sibling radios or checkboxes for tighter spacing */
 }
 .radio-inline,
 .checkbox-inline {
@@ -3281,14 +3357,19 @@ input[type="checkbox"] {
   vertical-align: middle;
   cursor: pointer;
 }
+/* Line 246 */
 .radio-inline + .radio-inline,
 .checkbox-inline + .checkbox-inline {
   margin-top: 0;
   margin-left: 10px;
+  /* space out consecutive inline controls */
 }
+/* Feedback icons */
+/* Line 384 */
 .has-feedback .form-control {
   padding-right: 48.75px;
 }
+/* Line 394 */
 .form-control-feedback {
   top: 0;
   right: 0;
@@ -3311,8 +3392,10 @@ input[type="checkbox"] {
   height: 33px;
   line-height: 33px;
 }
+/* Line 433 */
 .has-feedback label ~ .form-control-feedback {
   top: 30px;
+  /* Height of the `label` and its margin */
 }
 .has-feedback label.sr-only ~ .form-control-feedback {
   top: 0;
@@ -5202,6 +5285,7 @@ button.close {
 }
 .modal-dialog {
   position: relative;
+  z-index: 1041;
   width: auto;
   margin: 10px;
 }
@@ -6759,6 +6843,8 @@ article .h6,
   z-index: 5;
 }
 /* base hero styles including heights */
+/* Hero sizes */
+/* Placholder sizes */
 /*
 If the hero height changes at different screen sizes:
 @media screen and (max-width: @screen-md-max){
@@ -6789,6 +6875,7 @@ If the hero height changes at different screen sizes:
 .hero.hero-small {
   min-height: 200px;
 }
+/* Other generic hero styles */
 .hero {
   position: relative;
 }
@@ -6821,7 +6908,14 @@ If the hero height changes at different screen sizes:
 _bg_carousel
 === === === === === === ===
 */
+/*
+CSS for the full screen carousel
+
+JS: proto/js/demos/bg-carousel.js
+HTML: proto/bg-carousel.php
+*/
 .bg-carousel-wrap {
+  /* Outer element of carousel*/
   position: absolute;
   top: 0;
   right: 0;
@@ -6832,6 +6926,10 @@ _bg_carousel
   pointer-events: none;
 }
 .bg-carousel-wrap .bg-carousel-static {
+  /*
+		This element stays static at the centre of the parent element
+		when the transition has finished running the background image will swap to the new image
+		*/
   position: absolute;
   top: 0;
   right: 0;
@@ -6848,12 +6946,21 @@ _bg_carousel
   position: absolute;
   top: 0;
   left: 0;
+  display: none;
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
   background-position: center center;
+  /*
+		This element is hidden most of the time
+		*/
   -webkit-background-size: cover;
           background-size: cover;
+}
+.bg-carousel-animate {
+  /*
+	The from-left and from from-right choose which side of the screen the elements come in from.
+	*/
 }
 .bg-carousel-animate.from-left {
   left: -100%;
@@ -6864,13 +6971,46 @@ _bg_carousel
   display: block;
 }
 .bg-carousel-animate.animate {
+  /* IF YOU CHANGE THIS VALUE ALSO CHANGE IT IN THE JAVASCRIPT. ALTER THE setTimeout DURATION ON LINE 93 TO MATCH THIS VALUE */
   left: 0;
+  /*
+		The animate class is given to the bg-carousel-animate element so that it only has a transition when it needs to
+		*/
   display: block;
   -webkit-transition: left .8s;
        -o-transition: left .8s;
           transition: left .8s;
 }
-.bg-carousel-control ul li a {
+/*
+CSS for the carousel controls
+*/
+.bg-carousel-control a {
+  cursor: pointer;
+}
+.bg-carousel-control .current {
+  /* Styles for current element */
+  background-color: rgba(200, 10, 10, .3);
+}
+/*
+CSS for the carousel chevrons
+
+Mostly uses the same styles as a regular bootstrap carousel by default
+*/
+.bg-carousel-chevrons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.bg-carousel-chevrons > * {
+  pointer-events: auto;
+}
+.bg-carousel-chevrons .carousel-control,
+.bg-carousel-chevrons span {
   cursor: pointer;
 }
 /* style for tabs. comment out if not using */
@@ -6903,9 +7043,17 @@ _bg_carousel
   display: block;
 }
 /* Custom header styles. Replaces the nav and navbar less files */
+/* Variables */
+/* Size of the header */
+/* Logo dimentions and file location */
+/* Hamburger menu icon variables*/
+/* Margin between the span elements */
+/* Main navigation sizes */
+/* Header links styles */
 header {
   min-height: 80px;
 }
+/* Hamburger */
 .nav-toggle {
   position: relative;
   display: block;
@@ -6924,21 +7072,38 @@ header {
 .nav-toggle .icon-bar + .icon-bar {
   margin-top: 4px;
 }
+.nav-toggle:hover {
+  /* Hover state of the hamburger*/
+}
+.nav-toggle.open {
+  /* Styles when menu is open */
+}
 nav ul li {
   display: inline-block;
+  /* Stuctural, try to avoid adding many styles to this element */
   font-size: 0;
 }
 nav ul li a {
+  /* Add margins and paddings to this element */
   display: block;
   font-size: 16px;
+}
+nav ul li a span {
+  /* Type styles can go here */
+}
+nav ul li a:hover {
+  /* Hover state of menu items */
 }
 nav ul li a:hover,
 nav ul li a:focus {
   text-decoration: none;
+  /* removes underline from the link*/
 }
 nav ul.v-list > li {
+  /* List where each item fills the whole width of the containing element */
   display: block;
 }
+/* Hidden sub-menus, such dropdowns or mega menus. Not limited to those two however */
 .sub-menu {
   position: absolute;
   display: none;
@@ -6946,22 +7111,41 @@ nav ul.v-list > li {
 .sub-menu.show {
   display: block;
 }
+/* Megamenu styles */
 .mega-menu .sub-menu {
   left: 0;
   width: 100%;
 }
+/* Dropdown styles */
+/* Responsive menu styles. The show class is added when the menu toggle is pressed */
 .mobile-nav {
   display: none;
 }
 .mobile-nav.show {
   display: block;
 }
+/* Default ogo styles that can be used anywhere on the site */
+.logo > a {
+  display: block;
+  width: auto;
+  height: auto;
+  background: url(../../../images/placeholder.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -webkit-background-size: auto auto;
+          background-size: cover;
+          background-size: auto auto;
+}
 .logo.logo-image > a {
+  /* If the logo is brought in by an image and you want to get the aspect ratio from height:auto */
   height: auto;
 }
 .logo.logo-ar > a {
   position: relative;
   width: 100%;
+  /* If the logo is a background image and you want to have a constant aspect ratio */
+  /* Width then Height value */
   height: 0;
   padding-bottom: 56.25%;
   background-repeat: no-repeat;
@@ -6978,18 +7162,7 @@ nav ul.v-list > li {
   width: 100%;
   height: 100%;
 }
-.logo > a {
-  display: block;
-  width: auto;
-  height: auto;
-  background: url(../../../images/placeholder.png);
-  background-repeat: no-repeat;
-  background-position: center center;
-  -webkit-background-size: cover;
-  -webkit-background-size: auto auto;
-          background-size: cover;
-          background-size: auto auto;
-}
+/* Logo styles for the header and footer, the two places that are most likly to have a logo */
 header .logo > a {
   width: auto;
   height: auto;
@@ -7000,6 +7173,8 @@ footer .logo > a {
 }
 /*
 @media screen and (max-width: [breakpoint] ;){
+
+Add responsive menu styles here
 
 }
 */
@@ -7029,6 +7204,12 @@ footer .logo > a {
 .panel > .container:not(.full-height) {
   position: static;
 }
+/*
+These styles are for the examples on the examples.php page
+*/
+/*
+Styles for the demo elements:
+*/
 .demo {
   position: relative;
   width: 100%;
@@ -7056,6 +7237,7 @@ footer .logo > a {
   height: 12px;
   background: #eee;
 }
+/* demo of a backgroung color. Pressing the button adds the transition class */
 .demo-background.transition .bg {
   background-color: #999;
 }
@@ -7067,6 +7249,7 @@ footer .logo > a {
        -o-transition-delay: .2s;
           transition-delay: .2s;
 }
+/* demo of an element moving on button press. Pressing the button adds the transition class */
 .demo-position {
   position: relative;
 }
@@ -7084,6 +7267,7 @@ footer .logo > a {
   left: -webkit-calc(100% - 12px);
   left:         calc(100% - 12px);
 }
+/* demo of a complex transform on button press. Pressing the button adds the transition class */
 .demo-transform {
   position: relative;
 }
@@ -7101,6 +7285,7 @@ footer .logo > a {
        -o-transform: translateX(150px) translateY(80px) scale(8) rotate(720deg);
           transform: translateX(150px) translateY(80px) scale(8) rotate(720deg);
 }
+/* Example of how to write animations */
 @-webkit-keyframes animation1 {
   0% {
     bottom: 0;
@@ -7190,6 +7375,7 @@ footer .logo > a {
   left: -webkit-calc(50% - 6px);
   left:         calc(50% - 6px);
 }
+/* Another Example of how to write animations */
 @-webkit-keyframes animation2 {
   0% {
     background-image: -webkit-gradient(linear, left bottom, right top, from(#999), to(#222));
@@ -7300,6 +7486,13 @@ footer .logo > a {
        -o-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }
+/*
+Linear gradient hover state change
+Also works as a way to fade between images
+Normally not possible with a standard transition
+*/
+/* This is an example of how to use the hoverImageTransition mixin to make fading between images easier to write */
+/* Without mixin */
 .demo-lgrad-hover .bg:after,
 .demo-lgrad-hover .bg:before {
   position: absolute;
@@ -7334,6 +7527,163 @@ footer .logo > a {
 .demo-lgrad-hover:hover .bg:before {
   opacity: 0;
 }
+/* using mixin */
+.demo-lgrad-hover-2 {
+  position: relative;
+}
+.demo-lgrad-hover-2:after,
+.demo-lgrad-hover-2:before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  content: " ";
+  -webkit-transition: all .5s;
+       -o-transition: all .5s;
+          transition: all .5s;
+}
+.demo-lgrad-hover-2:before {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#d2d2d2), to(rgba(0, 0, 0, 0)));
+  background-image: -webkit-linear-gradient(top, #d2d2d2, rgba(0, 0, 0, 0));
+  background-image:      -o-linear-gradient(top, #d2d2d2, rgba(0, 0, 0, 0));
+  background-image:         linear-gradient(to bottom, #d2d2d2, rgba(0, 0, 0, 0));
+  opacity: 1;
+}
+.demo-lgrad-hover-2:after {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#d2d2d2), to(rgba(0, 0, 0, 0)));
+  background-image: -webkit-linear-gradient(bottom, #d2d2d2, rgba(0, 0, 0, 0));
+  background-image:      -o-linear-gradient(bottom, #d2d2d2, rgba(0, 0, 0, 0));
+  background-image:         linear-gradient(to top, #d2d2d2, rgba(0, 0, 0, 0));
+  opacity: 0;
+}
+.demo-lgrad-hover-2:hover:before {
+  opacity: 0;
+}
+.demo-lgrad-hover-2:hover:after {
+  opacity: 1;
+}
+/* Styles for additional sections added to the contact form 7 forms */
+/*
+These are the styles used for the custom additions to the contact form 7 form.
+
+For an example of this in action go to: 
+col.balloonhost.co.uk/apply
+col.balloonhost.co.uk/order
+*/
+/* Size of the input and the margin between the inputs and the buttons*/
+/* '+' and '-' buttons on number elements that can be clicked to increase or decrease the value */
+.quantity-select {
+  position: relative;
+}
+.quantity-select label,
+.quantity-select .form-group {
+  display: block;
+}
+.quantity-select label {
+  /* Floats text onto the left and prevents it from streching over where the input with the buttons are */
+  float: left;
+  max-width: -webkit-calc(100% - (3 * (38px + 8px)));
+  max-width:         calc(100% - (3 * (38px + 8px)));
+  margin-bottom: 0;
+  line-height: 28px;
+}
+.quantity-select .form-group {
+  /* Margin on the bottom of the element*/
+  margin-bottom: 10px;
+}
+.quantity-select input {
+  /* The number element */
+  display: block;
+  float: right;
+  width: 38px;
+  height: 28px;
+  padding: 3px 9px 3px;
+  margin-right: 46px;
+  line-height: 1;
+  text-align: center;
+}
+.quantity-select input[type=number]::-webkit-inner-spin-button,
+.quantity-select input[type=number]::-webkit-outer-spin-button {
+  /* Removes the default webkit styles */
+  -webkit-appearance: none;
+  margin: 0;
+}
+.quantity-select.last .form-group {
+  margin-bottom: 22px;
+}
+.increment {
+  /* Styles for the increment buttons. Also used for the additional field buttons */
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 38px;
+  height: 28px;
+  font-size: 0;
+  cursor: pointer;
+  background: #aaa;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: contain;
+          background-size: contain;
+  border-radius: 3px;
+}
+.increment.down {
+  right: 92px;
+  /* Create the '-' sign with css: */
+}
+.increment.down:before {
+  position: absolute;
+  top: 13px;
+  left: 12px;
+  width: 14px;
+  height: 3px;
+  content: " ";
+  background: #fff;
+}
+.increment.up {
+  right: 0;
+  /* Create the '+' sign with css: */
+}
+.increment.up:after {
+  position: absolute;
+  top: 8px;
+  left: 18px;
+  width: 3px;
+  height: 14px;
+  content: " ";
+  background: #fff;
+}
+.increment.up:before {
+  position: absolute;
+  top: 13px;
+  left: 12px;
+  width: 14px;
+  height: 3px;
+  content: " ";
+  background: #fff;
+}
+.increment:hover {
+  /* Hover state of the increment buttons */
+  background-color: #337ab7;
+}
+/* additional field button */
+.additional-button {
+  position: relative;
+}
+.additional-button span {
+  position: relative;
+  display: inline-block;
+  height: 28px;
+  margin-bottom: 10px;
+}
+.additional-button .increment {
+  top: -1px;
+  right: -46px;
+}
 /* Custom LESS styles */
 /*
 
@@ -7341,6 +7691,7 @@ Contents:
 
 _structural_styles
 _z-indexs
+_general_styles
 _Reused_classes
 _page_specific
 _sidebar
@@ -7376,6 +7727,18 @@ footer {
 }
 /*
 === === === === === === ===
+_general_styles
+=== === === === === === ===
+*/
+a {
+  /* Adds opacity, background-color, and color transitions. The base transition speed is 0.5s */
+  /*						Attribute 					Speed 					*/
+  -webkit-transition: opacity .5s, background-color .5s, color .5s;
+       -o-transition: opacity .5s, background-color .5s, color .5s;
+          transition: opacity .5s, background-color .5s, color .5s;
+}
+/*
+=== === === === === === ===
 _Reused_classes
 === === === === === === ===
 */
@@ -7389,6 +7752,10 @@ _page_specific
 _media_queries
 === === === === === === ===
 */
+/* Max width: */
+/* Min width */
+/* Specific widths: */
+/* Orientation: */
 #static-ui {
   position: fixed;
   z-index: 999;

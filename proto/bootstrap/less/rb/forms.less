@@ -1,17 +1,25 @@
-//
-// Forms
-// --------------------------------------------------
+/*
+ Forms
+ --------------------------------------------------
+*/
+
+/*
+=====     =====     =====     =====     =====
+
+!!    IMPORTANT STYLES START ON LINE 615  !!
+
+=====     =====     =====     =====     =====
+
+Most of the styles in this file should get over-written at the end of this file.
+
+The styles brought out at the end of the file are the only bits that are worth changing within here. Most of the values are set in the variables file.
+*/
 
 
-// =====     =====     =====     =====     =====
-
-// !!    IMPORTANT STYLES START ON LINE 615  !!
-
-// =====     =====     =====     =====     =====
-
-// Normalize non-controls
-//
-// Restyle and baseline non-control form elements.
+/*
+Normalize non-controls
+Restyle and baseline non-control form elements.
+*/
 
 fieldset {
   padding: 0;
@@ -611,31 +619,31 @@ input[type="checkbox"] {
     }
   }
 }
+/*
+=====     =====     =====     =====     =====
 
-// =====     =====     =====     =====     =====
+                IMPORTANT STYLES
 
-//                IMPORTANT STYLES
-
-// =====     =====     =====     =====     =====
-
-// Label styles
-//Line 32
+=====     =====     =====     =====     =====
+*/
+/* Label styles */
+/* Line 32 */
 label {
   display: inline-block;
-  max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
+  max-width: 100%; /* Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141) */
   margin-bottom: 5px;
   font-weight: bold;
 }
 
-// Radio and checkbox styles
-// Line 52
+/* Radio and checkbox styles */
+/* Line 52 */
 input[type="radio"],
 input[type="checkbox"] {
   margin: 4px 0 0;
-  margin-top: 1px \9; // IE8-9
+  margin-top: 1px \9; /* IE8-9 */
   line-height: normal;
 }
-//Line 216
+/* Line 216 */
 .radio,
 .checkbox {
   position: relative;
@@ -644,7 +652,7 @@ input[type="checkbox"] {
   margin-bottom: 10px;
 
   label {
-    min-height: @line-height-computed; // Ensure the input doesnt jump when there is no text
+    min-height: @line-height-computed; /* Ensure the input doesnt jump when there is no text */
     padding-left: 20px;
     margin-bottom: 0;
     font-weight: normal;
@@ -652,7 +660,7 @@ input[type="checkbox"] {
   }
 }
 
-// Line 312
+/* Line 312 */
 .radio input[type="radio"],
 .radio-inline input[type="radio"],
 .checkbox input[type="checkbox"],
@@ -664,7 +672,7 @@ input[type="checkbox"] {
 
 .radio + .radio,
 .checkbox + .checkbox {
-  margin-top: -5px; // Move up sibling radios or checkboxes for tighter spacing
+  margin-top: -5px; /* Move up sibling radios or checkboxes for tighter spacing */
 }
 .radio-inline,
 .checkbox-inline {
@@ -677,23 +685,23 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-// Line 246
+/* Line 246 */
 .radio-inline + .radio-inline,
 .checkbox-inline + .checkbox-inline {
   margin-top: 0;
-  margin-left: 10px; // space out consecutive inline controls
+  margin-left: 10px; /* space out consecutive inline controls */
 }
 
 
-// Feedback icons
-//Line 384
+/* Feedback icons */
+/* Line 384 */
 .has-feedback {
   .form-control {
     padding-right: (@input-height-base * 1.25);
   }
 }
 
-// Line 394
+/* Line 394 */
 .form-control-feedback {
   top: 0;
   right: 0;
@@ -718,14 +726,13 @@ input[type="checkbox"] {
 }
 
 
-// Line 433
+/* Line 433 */
 .has-feedback label {
 
   & ~ .form-control-feedback {
-     top: (@line-height-computed + 5); // Height of the `label` and its margin
+     top: (@line-height-computed + 5); /* Height of the `label` and its margin */
   }
   &.sr-only ~ .form-control-feedback {
      top: 0;
   }
 }
-

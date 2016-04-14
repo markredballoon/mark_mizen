@@ -9,7 +9,7 @@
     <meta name="author" content="">
 
     <!-- Page Title -->
-	<title>PAGE TITLE</title>
+	<title>Background Carousel</title>
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
@@ -27,7 +27,7 @@
 	<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
 	<meta name="msapplication-TileColor" content="#254c75">
 	<meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png">
-	
+
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="style.css?version=1" />
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -51,13 +51,32 @@
 		<div class="bg-carousel-animate"></div>
 	</div>
 
+  <div class="bg-carousel-chevrons">
+    <div class="carousel-control left" onclick="prevSlide()">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </div>
+    <div class="carousel-control right" onclick="nextSlide()">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </div>
+  </div>
+
 	<div class="container window-height">
 		<div class="row">
 			<div class="col-xs-24 text-center">
-				<h3>Background carousel (JGD)</h3>
+				<h3>Background carousel</h3>
+        <p>
+          This is the background carousel used on the james glancy site. It is not a bootstrap carousel.
+        </p>
+        <p>
+          Images are added via the script at the top of the body tag. They are brought in this way so that the images are easy to add with php.
+        </p>
+        <p>
+          css: proto/bootstrap/less/rb/bg-carousel.less<br/>
+          js: proto/js/demos/bg-carousel.js
+        </p>
 			</div>
 		</div>
-		<div class="row bottom">
+		<div class="row bottom text-center">
 			<div class="bg-carousel-control">
 				<ul>
 					<li>
@@ -72,12 +91,14 @@
 						<a class="move-background" onclick="moveBackground(2)" data-bgimg="2">Image 2</a>
 					</li>
 				</ul>
+
+        <a class="move-background" onclick="prevSlide()" data-bgimg="2">Prev slide</a>
+        <a class="move-background" onclick="nextSlide()" data-bgimg="2">Next slide</a>
+
 			</div><!--/bg-carousel-control-->
 		</div>
 	</div><!--/container-->
 </div>
-
-
 
 
 
@@ -87,8 +108,7 @@
 <script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8" ></script>
 
 <!-- Bootstrap core JavaScript -->
-<script src="bootstrap/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>  
-
+<script src="bootstrap/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 
 <!-- Custom JS files -->
 <script src="js/custom.js" type="text/javascript" charset="utf-8"></script>

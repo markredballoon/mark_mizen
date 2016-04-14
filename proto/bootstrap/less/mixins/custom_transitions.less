@@ -1,5 +1,9 @@
 // Custom mixins which add transitions.
 
+/*
+Fade in mixin.
+Fades in when the strigger class is added. default trigger class is 'show'
+*/
 .fadeIn(@speed; @delay; @triggerClass:show;){
 	opacity: 0;
 	transition: opacity @speed ;
@@ -8,8 +12,9 @@
 		opacity: 1;
 	}
 };
+
 /*
-Fades in from 0 when show class is added. 
+Fades in from 0 when show class is added.
 The animation only runs on the leading edge (fade in, disapear immediatly)
 */
 .fadeInLeading(@speed; @delay; @triggerClass:show;){
@@ -24,7 +29,7 @@ The animation only runs on the leading edge (fade in, disapear immediatly)
 };
 
 /*
-Fades in from 0 when show class is added. 
+Fades in from 0 when show class is added.
 The animation only runs on the falling edge (appear immediatlu, fade out)
 */
 .fadeInFalling(@speed; @delay; @triggerClass:show; ){
@@ -39,15 +44,19 @@ The animation only runs on the falling edge (appear immediatlu, fade out)
 	}
 };
 
-
-
-// changeClass is the name of the class given to the element to produce the transition. If the transition is done completely within Js then this will not work.
+/*
+Adds a delay to the falling edge of a transition.
+*/
 .transitionFallingDelay(@triggerClass; @delay){
 	transition-delay: @delay;
 	&.@{triggerClass}{
 		transition-delay: 0;
 	}
 }
+
+/*
+Adds a delay to the leading edge of a transtion
+*/
 .transitionLeadingDelay(@triggerClass; @delay){
 	transition-delay: 0;
 	&.@{triggerClass}{
@@ -55,20 +64,29 @@ The animation only runs on the falling edge (appear immediatlu, fade out)
 	}
 }
 
-// Adds specific transition to element
+/*
+ Adds specific transition to element
+ */
 .styleTransition(@speed; @delay:0; @style:all;){
 	transition: @style @speed ;
 	transition-delay: @delay;
 };
 
-// Adds a transition to every change
+/*
+Adds a transition to all effects
+*/
 .smoothTransition(@speed){
 	transition: all @speed ;
 }
 
 
+/*
+This mixin fades between two images.
+Normally this is impossible but by setting the backgrounds on the before and after tags and fading between the two it acts like adding a transition to the background-image css attribute
 
-
+Doesn't work on elements that need position to be set to anything other than relative, fixed or absolute.
+Also doesn't work if you need to use the before/after tags for something else (e.g. clearfix).
+*/
 .hoverImageTransition(@initialImage; @hoverImage; @speed:0.8s; @delay:0;){
 	position: relative;
 	&:after, &:before{
@@ -95,3 +113,14 @@ The animation only runs on the falling edge (appear immediatlu, fade out)
 	}
 }
 
+
+/*
+Fade transitions to add to any elements that need to fade, change color or change background color without adding transitions to left, right or dimentional values
+the speed is at a default of 0.8s, but this can be changed
+*/
+.fadeTransition(@transitionSpeed:0.5s;){
+	/*						Attribute 					Speed 					*/
+	transition: 	opacity 						@transitionSpeed,
+								background-color 		@transitionSpeed,
+								color 							@transitionSpeed;
+}

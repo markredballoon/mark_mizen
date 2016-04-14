@@ -9,7 +9,7 @@
     <meta name="author" content="">
 
     <!-- Page Title -->
-	<title>PAGE TITLE</title>
+	<title>Examples</title>
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
@@ -27,7 +27,7 @@
 	<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
 	<meta name="msapplication-TileColor" content="#254c75">
 	<meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png">
-	
+
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="style.css?version=1" />
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -41,14 +41,21 @@
 
 	<div class="row">
 		<div class="col-xs-24 text-center">
-			<h1>Components</h1>
-			<p>Use this file for any html components that are added that might be useful to plug into a new project</p>
+			<h1>Examples</h1>
+			<p>Use this file contains examples of what can be made with built in mixins and classes.</p>
+      <p>There are also examples of animations, transitions and buttons.</p>
+      <p>Update this file with extra componets that you feel it would be useful to have an example of.</p>
+      <p>Larger components should be put into their own file</p>
+      <p>
+        The styles for the elements on this page are in proto/bootstrap/less/rb/example.less
+      </p>
 		</div>
 	</div>
 
 </div><!-- container -->
 
 <div class="container">
+
 	<div class="row">
 		<div class="col-xs-24">
 			<h2>Calls to action</h2>
@@ -105,7 +112,7 @@
 
 		<a href="#/">
 			<div class="col-md-6 cta cta-fluid">
-				<div class="bg" style="background-color: #bada55"></div>		
+				<div class="bg" style="background-color: #bada55"></div>
 				<div class="image-wrap">
 					<img src="images/placeholder.png" alt="">
 				</div>
@@ -113,13 +120,13 @@
 				<div class="cta-content">
 					<span>CTA that gets its height from an image</span>
 				</div>
-				
+
 			</div>
 		</a>
 
 		<a href="#/">
 			<div class="col-md-6 cta cta-fluid">
-				<div class="bg" style="background-color: #bada55"></div>		
+				<div class="bg" style="background-color: #bada55"></div>
 				<div class="image-wrap">
 					<img src="images/placeholder.png" alt="">
 				</div>
@@ -132,16 +139,16 @@
 
 		<a href="#/">
 			<div class="col-md-6 cta cta-fluid">
-				<div class="bg" style="background-color: #bada55"></div>		
+				<div class="bg" style="background-color: #bada55"></div>
 				<div class="image-wrap">
 					<img src="images/placeholder.png" alt="">
-					
+
 				</div>
 				<div class="overlay"></div>
 				<div class="cta-content">
 					<span>CTA that gets its height from an image</span>
 				</div>
-				
+
 			</div>
 		</a>
 
@@ -314,6 +321,13 @@
 			</div>
 		</div>
 	</div>
+  <div class="row">
+		<div class="col-sm-8">
+			<div class="demo demo-lgrad-hover-2" >
+				<div class="bg"></div>
+			</div>
+		</div>
+	</div>
 </div>
 
 </div><!--main-->
@@ -323,7 +337,7 @@
 <script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8" ></script>
 
 <!-- Bootstrap core JavaScript -->
-<script src="bootstrap/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>  
+<script src="bootstrap/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 
 <!-- Custom JS files -->
 <script src="js/custom.js" type="text/javascript" charset="utf-8"></script>

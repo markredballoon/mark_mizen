@@ -3,7 +3,7 @@
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
- 
+
 // Core variables and mixins
 @import "mixins.less";
 
@@ -18,7 +18,7 @@
 @import "code.less";
 @import "grid.less";
 @import "tables.less";
-@import "forms.less";
+@import "rb/forms.less";
 @import "buttons.less";
 
 // Components
@@ -54,36 +54,36 @@
 
 // Important Less files to be edited by us
 
-@import "variables.less";
-@import "type.less";
-//@import "navs.less";
-//@import "navbar.less";
+@import "rb/variables.less";
+@import "rb/type.less";
 
 
 
 // Red balloon LESS files
 
 	/* Custom utility classes */
-@import "rb-utilities.less";
+@import "rb/rb-utilities.less";
 	/* base hero styles including heights */
-@import "hero.less";
+@import "rb/hero.less";
 
 	/* Styles for background carousel. comment out if not using */
-@import "bg-carousel.less";	
+@import "rb/bg-carousel.less";
 	/* style for tabs. comment out if not using */
-@import "tabs.less";
+@import "rb/tabs.less";
 
 	/* Custom header styles. Replaces the nav and navbar less files */
-@import "rb-header-nav.less";
+@import "rb/rb-header-nav.less";
 	/*styles for panels*/
-@import "rb-panels.less";
-@import "component-demo.less";
+@import "rb/rb-panels.less";
+@import "rb/examples.less";
+
+  /* Styles for additional sections added to the contact form 7 forms */
+@import "rb/form-additions.less";
 
 
-// Custom CSS 
-@import "custom.less";
+// Custom CSS
+@import "rb/custom.less";
 
-@import "responsive.less";
+@import "rb/responsive.less";
 
-@import "scrollmagic.less";
-
+@import "rb/scrollmagic.less";

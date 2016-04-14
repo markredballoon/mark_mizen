@@ -1,0 +1,90 @@
+/*
+=== === === === === === ===
+_bg_carousel
+=== === === === === === ===
+*/
+
+/*
+CSS for the full screen carousel
+
+JS: proto/js/demos/bg-carousel.js
+HTML: proto/bg-carousel.php
+*/
+
+.bg-carousel-wrap{
+	/* Outer element of carousel*/
+	.abs-cover(0);
+	pointer-events: none;
+	.bg-carousel-static{
+		/*
+		This element stays static at the centre of the parent element
+		when the transition has finished running the background image will swap to the new image
+		*/
+		.abs-cover(0);
+		.cover-bg();
+	}
+	.bg-carousel-animate{
+		/*
+		This element is hidden most of the time
+		*/
+		.cover-bg();
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top:0;
+		left: 0;
+		display: none;
+	}
+}
+.bg-carousel-animate{
+	/*
+	The from-left and from from-right choose which side of the screen the elements come in from.
+	*/
+	&.from-left{
+		left:-100%;
+		display: block;
+	}
+	&.from-right{
+		left: 100%;
+		display: block;
+	}
+	&.animate{
+		/*
+		The animate class is given to the bg-carousel-animate element so that it only has a transition when it needs to
+		*/
+		display: block;
+		transition: left 0.8s; /* IF YOU CHANGE THIS VALUE ALSO CHANGE IT IN THE JAVASCRIPT. ALTER THE setTimeout DURATION ON LINE 93 TO MATCH THIS VALUE */
+		left: 0;
+	}
+}
+/*
+CSS for the carousel controls
+*/
+.bg-carousel-control{
+	a{
+		cursor: pointer;
+	}
+	.current{
+		/* Styles for current element */
+		background-color: rgba(200,10,10,0.3);
+	}
+}
+/*
+CSS for the carousel chevrons
+
+Mostly uses the same styles as a regular bootstrap carousel by default
+*/
+.bg-carousel-chevrons{
+	position: absolute;
+	display: block;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 5;
+	.clickThrough();
+	.carousel-control,
+	span{
+		cursor:pointer;
+	}
+}

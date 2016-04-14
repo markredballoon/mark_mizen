@@ -9,7 +9,7 @@
     <meta name="author" content="">
 
     <!-- Page Title -->
-	<title>PAGE TITLE</title>
+	<title>ScrollMagic</title>
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
@@ -27,7 +27,7 @@
 	<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
 	<meta name="msapplication-TileColor" content="#254c75">
 	<meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png">
-	
+
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="style.css?version=1" />
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -50,12 +50,12 @@
 
 <script>
 
-/* This requires a lot more then can be put into this proto file. 
+/* This requires a lot more then can be put into this proto file.
 Check the documentation: http://janpaepke.github.io/ScrollMagic/docs/index.html
 and the demos: http://scrollmagic.io/examples/index.html
 
 It is very complicated and anything beyond simple pinning can take a long time to get working fully. There are also tons of options for fine tuning the animations.
-*/	
+*/
 	var controller = new ScrollMagic.Controller();
 
 	$(function () { // wait for document ready
@@ -135,7 +135,7 @@ It is very complicated and anything beyond simple pinning can take a long time t
 	<div class="container window-height">
 		<div class="row">
 			<h3 class="text-center">Panel_3</h3>
-			
+
 		</div>
 	</div>
 </div>

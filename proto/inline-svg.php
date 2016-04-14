@@ -9,7 +9,7 @@
     <meta name="author" content="">
 
     <!-- Page Title -->
-	<title>PAGE TITLE</title>
+	<title>Inline SVGs</title>
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
@@ -27,7 +27,7 @@
 	<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
 	<meta name="msapplication-TileColor" content="#254c75">
 	<meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png">
-	
+
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="style.css?version=1" />
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -35,11 +35,19 @@
 </head>
 <body id="body" class="page-template-homepage page-id-# page-slug">
 <div id="main">
-	
+
 <div class="container">
 	<div class="bg" style="background-color:rgb(199,199,199);"></div>
 	<div class="row">
-
+    <div class="col-xs-24">
+      <h1>Inline SVGs</h1>
+      <p>
+        Add the svg file to the proto/inline_svgs/ folder.
+      </p>
+      <p>
+        css and js for the transition effect: inline at the bottom of the html.
+      </p>
+    </div>
 		<div class="col-xs-8 col-xs-offset-8">
 			<div class="image-wrap">
 				<?php
@@ -59,17 +67,18 @@
 <script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8" ></script>
 
 <!-- Bootstrap core JavaScript -->
-<script src="bootstrap/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>  
+<script src="bootstrap/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 
 <!-- Custom JS files -->
 <script src="js/custom.js" type="text/javascript" charset="utf-8"></script>
 
 <script>
+  // Colors to cycle through
 	var colors = ['#333','#999','#101','#00f'];
 	var counter = 0;
 
 	jQuery(window).load(function() {
-		setInterval( function(){
+		var svgInterval = setInterval( function(){
 			if (counter < colors.length ) {
 				jQuery('#target').attr('fill', (colors[counter]));
 				counter++;
