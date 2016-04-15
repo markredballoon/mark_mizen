@@ -1,20 +1,23 @@
 /* Variables */
 
-/* Size of the header */
+/* Height of the header */
 @header-height-base: 						80px;
 @header-height-responsive: 			100px;
 
 /* Logo dimentions and file location */
 
 @logo-image: 										url(../../../images/placeholder.png);
-@logo-image-responsive: 				@logo-image;
+@logo-image-responsive: 				@logo-image; /* Alternative logo for smaller sized screens */
 
+/* Default size of the logo */
 @logo-width-default: 						auto;
 @logo-height-default:						auto;
 
+/* Size of the logo within the header */
 @logo-width-header: 						@logo-width-default;
 @logo-height-header: 						@logo-height-default;
 
+/* Size of the logo in the footer */
 @logo-width-footer:							@logo-width-default;
 @logo-height-footer: 						@logo-height-default;
 
@@ -32,7 +35,6 @@
 @nav-main-item-height: 					auto;
 
 /* Header links styles */
-
 
 header{
 	min-height: @header-height-base;
@@ -52,7 +54,6 @@ header{
     height: @menu-icon-height;
 		background: @menu-icon-colour;
 		border-radius: @menu-icon-border-radius;
-		//margin-bottom: 3px;
 		& + .icon-bar{
 			margin-top: @menu-icon-inside-margin;
 		}
@@ -65,7 +66,7 @@ header{
 	}
 }
 
-// Default nav styles
+/* Default nav styles */
 nav{
 	ul{
 		li{
@@ -134,7 +135,7 @@ nav{
 		height: @logo-height-default;
 	}
 	&.logo-image>a{
-		/* If the logo is brought in by an image and you want to get the aspect ratio from height:auto */
+		/* If the logo is brought in by an image and you want to get the aspect ratio from height:auto. */
 		height:auto;
 	}
 	&.logo-ar>a{
