@@ -49,14 +49,14 @@ function register_cpt_modules() {
         register_post_type( 'module', $args );
 }
 function module_shortcode( $atts, $content = null)  {
- 
+
     extract( shortcode_atts( array(
                 'type' => ''               // Type of module eg 'forged_in_hiroshima'
-            ), $atts 
-        ) 
+            ), $atts
+        )
     );
-    
-	$queried_post = get_page_by_path($type,OBJECT,'module');	    
+
+	$queried_post = get_page_by_path($type,OBJECT,'module');
 	// $queried_post = get_id_by_slug($type);
     if ($type === 'forged') {
 		$output .= _get_project_info('0', $queried_post->post_content);
@@ -64,18 +64,20 @@ function module_shortcode( $atts, $content = null)  {
     if ($type === 'stamping') {
 		$output .= _get_project_info('0', $queried_post->post_content);
     }
-	
+
     return $output ;
- 
+
 }
 add_shortcode('module', 'module_shortcode');
 
+
+
 function quote_shortcode( $atts, $content)  {
- 
+
     extract( shortcode_atts( array(
                 'cite' => ''               // Name of person to be cited in the quote
-            ), $atts 
-        ) 
+            ), $atts
+        )
     );
 
     if ($cite === 'david') {
@@ -90,12 +92,20 @@ function quote_shortcode( $atts, $content)  {
 		$quote_img = 'tetsuo.jpg';
 		$quote_title = 'Testuo';
     }
-    
+
     $output = '<div class="quote alt-quote clearfix"><div class="quote-image" ><div class="image-wrap"><img src="'.get_bloginfo( 'template_url' ).'/images/quote/'.$quote_img.'" alt="'.$quote_title.'"/></div></div><div class="container"><div class="row"><div class="the-quote col-md-10 col-md-offset-14 col-xs-24 col-xs-offset-0 text-center">';
 	$output .= '<p>' . $content . '</p>';
 	$output .= '<p><strong>' . $quote_title . '</strong></p>';
 	$output .= '</div></div></div></div>';
     return $output;
- 
+
 }
 add_shortcode('quote', 'quote_shortcode');
+
+// Add css and js files for video base plugin.
+function add_module_base_files(){
+  $plugin_url = plugin_dir_url( __FILE__ );
+  wp_enqueue_script( 'modules-script', $plugin_url . 'js/randomize-images.js' );
+}
+// Added to the enqueue hook.
+add_action( 'wp_enqueue_scripts', 'add_module_base_files' );

@@ -70,13 +70,13 @@ function video_shortcode( $atts, $content = null)  {
         $video_url_id		= get_post_meta($video->ID, 'video_url_id', true);
         $videoThumb         = get_the_post_thumbnail($video->ID);
         $videoDescription   = apply_filters('the_excerpt', get_post_field('post_excerpt', $video));
-		
+
 		if ( !empty($url) ) {
             $urlOUT = $url;
         } else {
         	$urlOUT = $video_url_id;
         }
-        
+
         // get the video id
         $getVideoId = $video_url_id;
 
@@ -150,3 +150,12 @@ function shortcode( $atts, $content = null ) {
 
     return $output;
 }
+
+// Add css and js files for video base plugin.
+function add_video_base_files(){
+  $plugin_url = plugin_dir_url( __FILE__ );
+  wp_enqueue_script( 'video-script', $plugin_url . 'js/video-base.js' );
+  wp_enqueue_style( 'video-styles', $plugin_url . 'css/video-base.min.css' );
+}
+// Added to the enqueue hook.
+add_action( 'wp_enqueue_scripts', 'add_video_base_files' );

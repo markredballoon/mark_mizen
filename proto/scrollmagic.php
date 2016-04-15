@@ -50,7 +50,8 @@
 
 <script>
 
-/* This requires a lot more then can be put into this proto file.
+/*
+This requires a lot more then can be put into this proto file.
 Check the documentation: http://janpaepke.github.io/ScrollMagic/docs/index.html
 and the demos: http://scrollmagic.io/examples/index.html
 
@@ -58,18 +59,18 @@ It is very complicated and anything beyond simple pinning can take a long time t
 */
 	var controller = new ScrollMagic.Controller();
 
-	$(function () { // wait for document ready
+	$(function () {
 		// build tweens
-		var tween1 = new TimelineMax ()
+		var tween1 = new TimelineMax () // TimelineMax is from gasp, a javascript animation library. http://greensock.com/gsap
 		tween1.to('#page2 .bg', 1, {opacity:1}, 0);
 
 		// build scenes
 		var scene1 = new ScrollMagic.Scene({triggerElement: "#trigger2", duration: 800})
-						.setPin("#page2")
-						.triggerHook('onLeave')
-						.setTween(tween1)
-						.addIndicators({name: "1 (duration: 500)"})
-						.addTo(controller);
+						.setPin("#page2") // The pin is the
+						.triggerHook('onLeave') // onLeave or onEnter
+						.setTween(tween1) // The animation you want to use
+						.addIndicators({name: "1 (duration: 500)"}) // Indicators for debugging
+						.addTo(controller); // Required to get the plugin to work
 
 		// change behaviour of controller to animate scroll instead of jump
 		controller.scrollTo(function (newpos) {
@@ -97,6 +98,9 @@ It is very complicated and anything beyond simple pinning can take a long time t
 <div id="main">
 
 <div id="static-ui">
+  <p>
+    This is a staticly positioned list with anchor links.
+  </p>
 	<nav>
 		<ul class="v-list">
 			<li><a href="#page1" class=""><span>Page1</span></a></li>
@@ -112,7 +116,14 @@ It is very complicated and anything beyond simple pinning can take a long time t
 	<div class="container window-height">
 		<div class="row">
 			<h3 class="text-center">Panel_1</h3>
-			<p>Scroll down</p>
+      <p>
+        This is a demo of how to use scrollmagic for effects as you scroll down the page. The JS is in the header, the scrollmagic files are in proto/js/scroll-magic/
+      </p>
+      <p>
+        ScrollMagic is very intensive and can be hard to develop.
+        <br>
+        Styles can be found in proto/bootstrap/less/scrollmagic.less
+      </p>
 		</div>
 	</div>
 </div>

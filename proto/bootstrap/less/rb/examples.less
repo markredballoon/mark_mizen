@@ -1,7 +1,14 @@
 /*
 These styles are for the examples on the examples.php page
-*/
 
+Content:
+
+styles for the demo elements
+demos of styleTransition mixin
+example of css animations
+example of fade between images using css. With/without mixin
+
+*/
 /*
 Styles for the demo elements:
 */
@@ -52,7 +59,10 @@ Styles for the demo elements:
 	}
 }
 
-/* Example of how to write animations */
+/*
+Example of how to write animations:
+	Firstly, create the keyframes
+ */
 @keyframes animation1{
 	0% { bottom: 0; }
 	20% { bottom: 120px; }
@@ -62,6 +72,10 @@ Styles for the demo elements:
 	90% { bottom: 20px; }
 	100% { bottom: 0;}
 }
+/*
+Add the name of the animation, the duration, the iteration count, and the timing function.
+If writing in plain css then this requires a lot of prefixing. Bootstrap auto-prefixes as it compiles however.
+*/
 .demo-animation-1{
 	&.transition .moving-element{
 		animation-name: animation1;
@@ -138,3 +152,6 @@ Normally not possible with a standard transition
 .demo-lgrad-hover-2{
 	.hoverImageTransition( linear-gradient(to bottom, rgba(210, 210, 210, 1), rgba(0, 0, 0, 0)), linear-gradient(to top, rgba(210, 210, 210, 1), rgba(0, 0, 0, 0)) );
 }
+
+
+/* Checkbox tabs */

@@ -1,0 +1,219 @@
+// video plugin
+#body,
+#main{
+  /* Default styles */
+  .video-base{
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    .video-title{
+      .video-title-wrap{
+        h4{
+          /* Styles for the title of the video */
+          margin: 0;
+        }
+      }
+    }
+    *{
+      /* Fade out transition */
+      transition: opacity 0.8s;
+    }
+    .iframe-wrap{
+      background: #000;
+      position: relative;
+      width: 100%;
+      &.outer{
+        /* used for max width and padding/margins */
+      }
+      &.inner{
+        /* Sets responsive dimentions of the video */
+        /* Need some way of dynamically setting this. May be best with PHP and inline styles */
+        height: 0;
+        padding-bottom: 56%;
+      }
+      iframe{
+        border: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%!important;
+        width: 100%!important;
+      }
+    }
+    .video-thumbnail{
+      background-color: #010101;
+      position: absolute;
+      top:0;
+      left:0;
+      bottom:0;
+      right:0;
+      z-index: 2;
+      overflow: hidden;
+      img{
+        width: 100%!important;
+        left: 0;
+        position: absolute!important;
+        max-width: none!important;
+      	max-height: none!important;
+      	height: auto!important;
+      	top: 50%;
+      	transform: translateY(-50%);
+      }
+    }
+    /* When the user clicks on the video to play it */
+    &.play-video{
+      cursor: auto;
+      .video-thumbnail{
+        opacity: 0;
+        pointer-events: none;
+        *{
+          pointer-events: none;
+        }
+      }
+    }
+
+    /* Embeded player styles */
+    &.embed{
+      /* Adds a max width to the video and centraly aligns it */
+      max-width: 840px;
+      margin: 0 auto;
+      .video-title{
+        /* Title styles */
+        padding-top: 46px;
+        padding-bottom: 15px;
+        text-align: center;
+        h4{
+          background-color: #133797;
+          display: inline-block;
+          padding: 3px 12px 0;
+          font-family: "AvenirNextCondensed";
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 33px;
+          color: #fff;
+          text-transform: uppercase;
+        }
+      }
+      .video-thumbnail{
+        /* Hide thumbnail */
+      }
+      .iframe-wrap.outer{
+        &::before,
+        &::after{
+          z-index: 4;
+          content:" ";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          display: block;
+        }
+        &::before{
+          width: 67px;
+          height: 67px;
+          background: #051E8D;
+          border-radius: 50%;
+        }
+        &::after{
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 13px 0 13px 26px;
+          border-color: transparent transparent transparent #ffffff;
+          left: calc(50% + 3px);
+        }
+      }
+      &.play-video{
+        .iframe-wrap.outer{
+          &::before,
+          &::after{
+            opacity: 0;
+            pointer-events: none;
+            *{
+              pointer-events: none;
+            }
+          }
+        }
+      }
+    }
+
+    /* Thumbnail player styles (homepage) */
+    &.thumbnail{
+      /* Adds responsive hight of element to parent */
+      /* Child elements have to be absolutly positioned */
+      padding: 0;
+      padding-bottom: 60%;
+      margin-bottom: 12px;
+      border: none;
+      .video-title{
+        /* Title in bottom left of element */
+        position: absolute;
+        z-index: 3;
+        bottom: 0;
+        left: 0;
+        h4{
+          padding: 11px 12px 7px;
+          color: #fff;
+          text-transform: uppercase;
+          background: #051e8d;
+          margin: 0;
+          font-size: 17px;
+          line-height: 24px;
+        }
+      }
+      .iframe-wrap{
+        z-index: 1;
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+        &.inner{
+          padding: 0;
+        }
+      }
+      &::before,
+      &::after{
+        z-index: 4;
+        content:" ";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+      }
+      &::before{
+        width: 67px;
+        height: 67px;
+        background: #051E8D;
+        border-radius: 50%;
+      }
+      &::after{
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 13px 0 13px 26px;
+        border-color: transparent transparent transparent #ffffff;
+        left: calc(50% + 3px);
+      }
+      &.play-video{
+        .video-title,
+        &::before,
+        &::after{
+          opacity: 0;
+          pointer-events: none;
+          *{
+            pointer-events: none;
+          }
+        }
+      }
+    }
+
+    /*
+    Under development
+    &.modal{}
+    */
+  }
+}
+/* Import css file */
+@import "video-base.css";

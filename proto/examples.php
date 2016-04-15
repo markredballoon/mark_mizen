@@ -322,6 +322,9 @@
 		</div>
 	</div>
   <div class="row">
+    <p>
+      Using mixin ( .hoverImageTransition(image1, image2) )
+    </p>
 		<div class="col-sm-8">
 			<div class="demo demo-lgrad-hover-2" >
 				<div class="bg"></div>
