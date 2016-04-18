@@ -60,6 +60,9 @@ baseW is the base width, baseH is the base height
 Allows clicking through an element but not child elements
 */
 /*
+Vertically centers an element within a relativly possitioned element.
+*/
+/*
 Fade in mixin.
 Fades in when the strigger class is added. default trigger class is 'show'
 */

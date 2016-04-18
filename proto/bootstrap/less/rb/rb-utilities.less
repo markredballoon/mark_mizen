@@ -1,6 +1,6 @@
 /* Utility Classes developed by red balloon */
 
-// Create full height containers and rows that start at the bottom of the page
+/* Create full height containers and rows that start at the bottom of the page */
 .container{
 	&.window-height{
 		position: relative;
@@ -13,29 +13,29 @@
 		}
 	}
 	.row.bottom{
-		// Positions row at bottom of a container. only use when container has set height
+		/* Positions row at bottom of a container. only use when container has set height */
 		position: absolute;
 		bottom: 0;
-		left: (@grid-gutter-width / 2); // Taken from grid.less . gives row correct position within the padding of the parent element.
+		left: (@grid-gutter-width / 2); /* Taken from grid.less . gives row correct position within the padding of the parent element. */
 		width: 100%;
 	}
 }
 
-//Add an element for use as a background
+/* Add an element for use as a background where the other elemnt needs a seperate background element */
 .bg{
-	// Requires position relative on parent element
+	/* Requires position relative on parent element */
 	.abs-cover(0);
 	.cover-bg();
 	pointer-events: none;
 	z-index: -1;
 }
 
-// Add an overlay to an element. Add hover class to add hover state
+/* Add an overlay to an element. Add hover class to add hover state */
 .overlay{
 	.abs-cover(0);
 	pointer-events: none;
 	background-color: #000;
-	opacity: 0.6; 
+	opacity: 0.6;
 	&.hover{
 		opacity: 0;
 	}
@@ -45,7 +45,7 @@
 }
 
 
-// Add text that appers in the center of a parent element on hover
+/* Add text that appers in the center of a parent element on hover. Parent needs position relative */
 .hover-text{
 	.abs-cover(0);
 	position: absolute;
@@ -62,7 +62,11 @@
 	display: block;
 }
 
-// Media wraps
+/*
+Media wraps
+
+These elements are used to wrap media elements
+*/
 .image-wrap{
 	width: 100%;
 	position: relative;
@@ -86,7 +90,7 @@
 	}
 }
 
-//captioned wraps
+/* captioned wraps */
 .captioned{
 	.title{
 	}
@@ -96,7 +100,7 @@
 
 
 
-//Aspect ratio classes:
+/* Aspect ratio classes: */
 .aspect-16-9{
 	.aspect-ratio(16, 9);
 }
@@ -109,7 +113,7 @@
 
 
 
-// Makes element full width of parent. Used to add full-width panels.
+/* Makes element full width of parent. Used to add full-width panels. */
 .full-width{
 	width: 100%;
 	position: relative;
@@ -120,8 +124,7 @@
 
 
 
-// Calls to action
-
+/* Calls to action */
 .cta{
 	position: relative;
 	&.cta-lg{
